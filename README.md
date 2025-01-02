@@ -3,6 +3,8 @@
 [<img src="https://img.shields.io/circleci/build/github/help-me-mom/ng-mocks/master" alt="build status" width="88" height="20" />](https://app.circleci.com/pipelines/github/help-me-mom/ng-mocks?branch=master)
 [<img src="https://img.shields.io/coveralls/github/help-me-mom/ng-mocks/master" alt="coverage status" width="104" height="20" />](https://coveralls.io/github/help-me-mom/ng-mocks?branch=master)
 
+It is fork to enable A19 support
+
 # Mock components, services and more out of annoying dependencies for simplification of Angular testing
 
 `ng-mocks` facilitates **Angular testing** and helps to:
