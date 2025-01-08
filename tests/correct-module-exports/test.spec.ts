@@ -9,14 +9,16 @@ import {
 } from 'ng-mocks';
 
 @Component({
-  selector: 'internal-correct-module-exports',
-  template: 'internal',
+    selector: 'internal-correct-module-exports',
+    template: 'internal',
+    standalone: false
 })
 class InternalComponent {}
 
 @Component({
-  selector: 'external',
-  template: 'external',
+    selector: 'external',
+    template: 'external',
+    standalone: false
 })
 class ExternalComponent {}
 

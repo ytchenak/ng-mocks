@@ -8,9 +8,10 @@ import {
 import { MockBuilder, MockRender, ngMocks } from 'ng-mocks';
 
 @Component({
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  selector: 'target-537',
-  template: '{{ value }}',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'target-537',
+    template: '{{ value }}',
+    standalone: false
 })
 class TargetComponent {
   @Output() public readonly update = new EventEmitter<void>();

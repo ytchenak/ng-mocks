@@ -46,6 +46,8 @@ export default <T extends Component & Directive>(
     },
   params: T,
 ): Component & Directive => {
+
+  const standalone = ((source as any).ɵcmp || (source as any).ɵdir || (source as any).ɵpipe)?.standalone;
   const hasResolver = ngMocksUniverse.config.has('mockNgDefResolver');
   if (!hasResolver) {
     ngMocksUniverse.config.set('mockNgDefResolver', new CoreDefStack());
@@ -61,9 +63,13 @@ export default <T extends Component & Directive>(
   if (meta.selector !== undefined) {
     options.selector = meta.selector;
   }
+  
   if (meta.standalone !== undefined) {
     options.standalone = meta.standalone;
+  } else if (standalone !== undefined) {
+    options.standalone = standalone;
   }
+
 
   if (meta.standalone && meta.imports) {
     const [, { imports }] = mockNgDef({ imports: meta.imports, skipExports: true });

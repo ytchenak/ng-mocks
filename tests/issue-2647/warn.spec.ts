@@ -24,7 +24,8 @@ class RootService {}
 class MissingService {}
 
 @Pipe({
-  name: 'missing',
+    name: 'missing',
+    standalone: false
 })
 class MissingPipe implements PipeTransform {
   constructor(public readonly missing: MissingService) {}
@@ -35,15 +36,17 @@ class MissingPipe implements PipeTransform {
 }
 
 @Directive({
-  selector: 'missing',
+    selector: 'missing',
+    standalone: false
 })
 class MissingDirective {
   constructor(public readonly missing: MissingService) {}
 }
 
 @Component({
-  selector: 'missing',
-  template: 'missing',
+    selector: 'missing',
+    template: 'missing',
+    standalone: false
 })
 class MissingComponent {
   constructor(public readonly missing: MissingService) {}
@@ -58,7 +61,8 @@ class TargetService {
 }
 
 @Pipe({
-  name: 'target',
+    name: 'target',
+    standalone: false
 })
 class TargetPipe implements PipeTransform {
   constructor(
@@ -72,7 +76,8 @@ class TargetPipe implements PipeTransform {
 }
 
 @Directive({
-  selector: 'target-2647-warn',
+    selector: 'target-2647-warn',
+    standalone: false
 })
 class TargetDirective {
   constructor(
@@ -82,8 +87,9 @@ class TargetDirective {
 }
 
 @Component({
-  selector: 'target-2647-warn',
-  template: 'target',
+    selector: 'target-2647-warn',
+    template: 'target',
+    standalone: false
 })
 class TargetComponent {
   constructor(

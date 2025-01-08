@@ -3,7 +3,8 @@ import { Directive } from '@angular/core';
 import { MockBuilder, MockRender, ngMocks } from 'ng-mocks';
 
 @Directive({
-  selector: 'div,span,[data-label],[data-span]',
+    selector: 'div,span,[data-label],[data-span]',
+    standalone: false
 })
 class TargetDirective {}
 

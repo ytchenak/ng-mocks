@@ -21,14 +21,15 @@ try {
 }
 
 @Component({
-  selector: 'target-ng-mocks-trigger-focus',
-  template: `
+    selector: 'target-ng-mocks-trigger-focus',
+    template: `
     <input
       [formControl]="control"
       (focus)="focusTag = $event"
       #element
     />
   `,
+    standalone: false
 })
 class TargetComponent implements OnDestroy {
   public readonly control = new FormControl();

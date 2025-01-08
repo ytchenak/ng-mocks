@@ -13,8 +13,9 @@ class HelloService {
 }
 
 @Component({
-  providers: [HelloService],
-  template: '',
+    providers: [HelloService],
+    template: '',
+    standalone: false
 })
 class HelloComponent {
   public serviceDescription = '';
@@ -25,8 +26,9 @@ class HelloComponent {
 }
 
 @Directive({
-  providers: [HelloService],
-  selector: 'hello',
+    providers: [HelloService],
+    selector: 'hello',
+    standalone: false
 })
 class HelloDirective {
   @Input() public name = '';

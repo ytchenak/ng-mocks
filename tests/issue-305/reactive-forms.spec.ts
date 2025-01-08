@@ -13,10 +13,11 @@ import {
 } from 'ng-mocks';
 
 @Component({
-  selector: 'target-305-reactive-forms',
-  template: `
+    selector: 'target-305-reactive-forms',
+    template: `
     <input data-testid="inputControl" [formControl]="myControl" />
   `,
+    standalone: false
 })
 class TargetComponent {
   public readonly myControl = new FormControl();

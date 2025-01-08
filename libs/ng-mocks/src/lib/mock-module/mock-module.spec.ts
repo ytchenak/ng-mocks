@@ -35,20 +35,22 @@ import {
 } from './mock-module.spec.fixtures';
 
 @Component({
-  selector: 'component-subject',
-  template: `
+    selector: 'component-subject',
+    template: `
     <example-component></example-component>
     <span example-directive></span>
     {{ test | examplePipe }}
   `,
+    standalone: false
 })
 class SubjectComponent {
   public test = 'test';
 }
 
 @Component({
-  selector: 'same-imports',
-  template: 'same imports',
+    selector: 'same-imports',
+    template: 'same imports',
+    standalone: false
 })
 class SameImportsComponent {}
 

@@ -20,7 +20,8 @@ describe('issue-7216', () => {
         <child></child>
       }
     `,
-  })
+    standalone: false
+})
   class TargetComponent {
     public readonly hasChild = true;
   }
@@ -28,7 +29,8 @@ describe('issue-7216', () => {
   @Component({
     selector: 'child',
     template: '',
-  })
+    standalone: false
+})
   class ChildComponent {}
 
   @NgModule({

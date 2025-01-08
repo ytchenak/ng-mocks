@@ -12,8 +12,9 @@ import { By } from '@angular/platform-browser';
 import { MockBuilder, ngMocks } from 'ng-mocks';
 
 @Component({
-  selector: 'parent',
-  template: '<div #parent>parent</div>',
+    selector: 'parent',
+    template: '<div #parent>parent</div>',
+    standalone: false
 })
 class ParentComponent implements OnDestroy {
   private readonly vcr: ViewContainerRef;
@@ -41,8 +42,9 @@ class ParentComponent implements OnDestroy {
 }
 
 @Component({
-  selector: 'child-1596',
-  template: '<span #child>child</span>',
+    selector: 'child-1596',
+    template: '<span #child>child</span>',
+    standalone: false
 })
 class ChildComponent {}
 

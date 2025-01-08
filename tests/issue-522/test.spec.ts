@@ -8,9 +8,10 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { MockRender, ngMocks } from 'ng-mocks';
 
 @Component({
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  selector: 'app-error-count-display',
-  template: '{{ count }} / {{ max }} errors',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'app-error-count-display',
+    template: '{{ count }} / {{ max }} errors',
+    standalone: false
 })
 class ErrorCountDisplayComponent {
   @Input() public count: number | null = 0;

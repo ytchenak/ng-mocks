@@ -9,9 +9,10 @@ import mockHelperGlobalWipe from './mock-helper.global-wipe';
 class TargetService {}
 
 @Component({
-  selector: 'target',
-  template: '{{ name }}',
-  providers: [TargetService],
+    selector: 'target',
+    template: '{{ name }}',
+    providers: [TargetService],
+    standalone: false
 })
 class TargetComponent {
   public readonly name = 'target';

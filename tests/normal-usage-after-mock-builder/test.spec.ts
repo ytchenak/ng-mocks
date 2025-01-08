@@ -12,23 +12,25 @@ class TargetService {
 }
 
 @Component({
-  selector: 'root-normal-usage-after-mock-builder',
-  template:
-    '<internal-normal-usage-after-mock-builder></internal-normal-usage-after-mock-builder>{{ service.called }}',
+    selector: 'root-normal-usage-after-mock-builder',
+    template: '<internal-normal-usage-after-mock-builder></internal-normal-usage-after-mock-builder>{{ service.called }}',
+    standalone: false
 })
 class TargetComponent {
   public constructor(public readonly service: TargetService) {}
 }
 
 @Component({
-  selector: 'internal-normal-usage-after-mock-builder',
-  template: 'real',
+    selector: 'internal-normal-usage-after-mock-builder',
+    template: 'real',
+    standalone: false
 })
 class RealComponent {}
 
 @Component({
-  selector: 'internal-normal-usage-after-mock-builder',
-  template: 'fake',
+    selector: 'internal-normal-usage-after-mock-builder',
+    template: 'fake',
+    standalone: false
 })
 class FakeComponent {}
 

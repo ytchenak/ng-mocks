@@ -9,12 +9,13 @@ import {
 } from 'ng-mocks';
 
 @Component({
-  selector: 'app-form',
-  template: `
+    selector: 'app-form',
+    template: `
     <form [formGroup]="form">
       <input type="text" formGroupName="name" />
     </form>
   `,
+    standalone: false
 })
 class FormComponent {
   public form = this.fb.group({

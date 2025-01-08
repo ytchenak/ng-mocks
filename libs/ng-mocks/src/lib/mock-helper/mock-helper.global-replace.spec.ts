@@ -5,16 +5,18 @@ import ngMocksUniverse from '../common/ng-mocks-universe';
 import mockHelperGlobalReplace from './mock-helper.global-replace';
 
 @Component({
-  selector: 'target',
-  template: '{{ name }}',
+    selector: 'target',
+    template: '{{ name }}',
+    standalone: false
 })
 class TargetComponent {
   public readonly name = 'target';
 }
 
 @Component({
-  selector: 'target',
-  template: '{{ name }}',
+    selector: 'target',
+    template: '{{ name }}',
+    standalone: false
 })
 class FakeComponent {
   public readonly name = 'fake';

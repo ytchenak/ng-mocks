@@ -12,9 +12,10 @@ import { isMockOf, MockModule, MockRender, ngMocks } from 'ng-mocks';
 class TargetService {}
 
 @Component({
-  selector: 'target-4344',
-  template: '{{ 1 | number }}',
-  providers: [AsyncPipe],
+    selector: 'target-4344',
+    template: '{{ 1 | number }}',
+    providers: [AsyncPipe],
+    standalone: false
 })
 class TargetComponent {
   constructor(

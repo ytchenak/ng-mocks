@@ -15,14 +15,15 @@ class TargetService implements AbstractService {
 }
 
 @Component({
-  providers: [
-    {
-      provide: AbstractService,
-      useClass: TargetService,
-    },
-  ],
-  selector: 'target-ng-mocks-find-instance-abstract',
-  template: '{{ service.echo() }}',
+    providers: [
+        {
+            provide: AbstractService,
+            useClass: TargetService,
+        },
+    ],
+    selector: 'target-ng-mocks-find-instance-abstract',
+    template: '{{ service.echo() }}',
+    standalone: false
 })
 class TargetComponent {
   public constructor(public readonly service: AbstractService) {}

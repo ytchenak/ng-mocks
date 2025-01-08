@@ -9,8 +9,9 @@ import {
 import { MockBuilder, MockRenderFactory, ngMocks } from 'ng-mocks';
 
 @Component({
-  selector: 'target-mock-render-factory-docs',
-  template: '',
+    selector: 'target-mock-render-factory-docs',
+    template: '',
+    standalone: false
 })
 class TargetComponent {
   @Input() public input1 = 0;

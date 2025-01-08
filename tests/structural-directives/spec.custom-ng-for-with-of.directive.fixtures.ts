@@ -8,7 +8,8 @@ export interface ICustomNgForContext {
 }
 
 @Directive({
-  selector: '[customNgForWithOf]',
+    selector: '[customNgForWithOf]',
+    standalone: false
 })
 export class CustomNgForWithOfDirective {
   public constructor(

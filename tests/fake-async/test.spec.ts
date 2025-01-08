@@ -10,8 +10,9 @@ import { fakeAsync, tick } from '@angular/core/testing';
 import { MockBuilder, MockRenderFactory, ngMocks } from 'ng-mocks';
 
 @Component({
-  selector: 'target-fake-async',
-  template: '{{ counter }}',
+    selector: 'target-fake-async',
+    template: '{{ counter }}',
+    standalone: false
 })
 class TargetComponent implements OnInit, OnDestroy {
   public counter = 0;

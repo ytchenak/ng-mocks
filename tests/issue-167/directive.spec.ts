@@ -18,19 +18,20 @@ import {
 import { MockBuilder, MockRender, ngMocks } from 'ng-mocks';
 
 @Directive({
-  providers: [
-    {
-      multi: true,
-      provide: NG_VALUE_ACCESSOR,
-      useExisting: forwardRef(() => TargetDirective),
-    },
-    {
-      multi: true,
-      provide: NG_VALIDATORS,
-      useExisting: forwardRef(() => TargetDirective),
-    },
-  ],
-  selector: '[target]',
+    providers: [
+        {
+            multi: true,
+            provide: NG_VALUE_ACCESSOR,
+            useExisting: forwardRef(() => TargetDirective),
+        },
+        {
+            multi: true,
+            provide: NG_VALIDATORS,
+            useExisting: forwardRef(() => TargetDirective),
+        },
+    ],
+    selector: '[target]',
+    standalone: false
 })
 class TargetDirective implements ControlValueAccessor, Validator {
   public valRegisterOnChange: any;
@@ -70,8 +71,9 @@ class TargetDirective implements ControlValueAccessor, Validator {
 }
 
 @Component({
-  selector: 'app-root-167-directive',
-  template: '<div [formControl]="control" target></div>',
+    selector: 'app-root-167-directive',
+    template: '<div [formControl]="control" target></div>',
+    standalone: false
 })
 class RealComponent {
   public readonly control = new FormControl();

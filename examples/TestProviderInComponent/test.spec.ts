@@ -10,9 +10,10 @@ class TargetService {
 }
 
 @Component({
-  providers: [TargetService],
-  selector: 'target',
-  template: '{{ service.value }}',
+    providers: [TargetService],
+    selector: 'target',
+    template: '{{ service.value }}',
+    standalone: false
 })
 class TargetComponent {
   public constructor(public readonly service: TargetService) {}

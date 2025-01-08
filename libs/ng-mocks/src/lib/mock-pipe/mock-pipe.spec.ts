@@ -6,24 +6,31 @@ import { isMockedNgDefOf } from '../common/func.is-mocked-ng-def-of';
 
 import { MockPipe, MockPipes } from './mock-pipe';
 
-@Pipe({ name: 'mockPipe' })
+@Pipe({
+    name: 'mockPipe',
+    standalone: false
+})
 export class ExamplePipe implements PipeTransform {
   public transform = (args: string): string => (args ? 'hi' : 'hi');
 }
 
-@Pipe({ name: 'anotherMockPipe' })
+@Pipe({
+    name: 'anotherMockPipe',
+    standalone: false
+})
 export class AnotherExamplePipe implements PipeTransform {
   public transform = (args: string): string => (args ? 'hi' : 'hi');
 }
 
 @Component({
-  selector: 'example-component',
-  template: `
+    selector: 'example-component',
+    template: `
     <span id="examplePipe">{{ someStuff | mockPipe: 'foo' }}</span>
     <span id="anotherExamplePipe">{{
       someStuff | anotherMockPipe: 'fighters'
     }}</span>
   `,
+    standalone: false
 })
 export class ExampleComponent {
   public someStuff = 'bah';

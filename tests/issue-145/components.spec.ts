@@ -4,34 +4,37 @@ import { NG_VALIDATORS, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { MockBuilder, MockRender, ngMocks } from 'ng-mocks';
 
 @Component({
-  selector: 'component1',
-  template: '',
+    selector: 'component1',
+    template: '',
+    standalone: false
 })
 class DefaultComponent {}
 
 @Component({
-  providers: [
-    {
-      multi: true,
-      provide: NG_VALUE_ACCESSOR,
-      useExisting: ValueAccessorComponent,
-    },
-  ],
-  selector: 'component2',
-  template: '',
+    providers: [
+        {
+            multi: true,
+            provide: NG_VALUE_ACCESSOR,
+            useExisting: ValueAccessorComponent,
+        },
+    ],
+    selector: 'component2',
+    template: '',
+    standalone: false
 })
 class ValueAccessorComponent {}
 
 @Component({
-  providers: [
-    {
-      multi: true,
-      provide: NG_VALIDATORS,
-      useExisting: ValidatorComponent,
-    },
-  ],
-  selector: 'component3',
-  template: '',
+    providers: [
+        {
+            multi: true,
+            provide: NG_VALIDATORS,
+            useExisting: ValidatorComponent,
+        },
+    ],
+    selector: 'component3',
+    template: '',
+    standalone: false
 })
 class ValidatorComponent {}
 

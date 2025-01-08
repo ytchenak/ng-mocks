@@ -19,8 +19,9 @@ class TargetService {
 }
 
 @Component({
-  selector: 'target-ng-mocks-faster',
-  template: 'target',
+    selector: 'target-ng-mocks-faster',
+    template: 'target',
+    standalone: false
 })
 class TargetComponent {
   public constructor(public readonly service: TargetService) {}

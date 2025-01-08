@@ -7,8 +7,9 @@ import { MockBuilder, MockRender } from 'ng-mocks';
 class MockService {}
 
 @Component({
-  selector: 'target-222-injector',
-  template: 'target',
+    selector: 'target-222-injector',
+    template: 'target',
+    standalone: false
 })
 class TargetComponent {
   public constructor(public readonly service: MockService) {}

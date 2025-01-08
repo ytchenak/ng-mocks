@@ -9,8 +9,9 @@ import {
 } from 'ng-mocks';
 
 @Component({
-  selector: 'target-mock-instance-member',
-  template: '',
+    selector: 'target-mock-instance-member',
+    template: '',
+    standalone: false
 })
 class TargetComponent {
   public beforeAll1 = '';

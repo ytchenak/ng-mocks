@@ -13,20 +13,21 @@ import {
 import { MockBuilder, MockRender, ngMocks } from 'ng-mocks';
 
 @Component({
-  providers: [
-    {
-      multi: true,
-      provide: NG_VALUE_ACCESSOR,
-      useExisting: forwardRef(() => TargetComponent),
-    },
-    {
-      multi: true,
-      provide: NG_VALIDATORS,
-      useExisting: forwardRef(() => TargetComponent),
-    },
-  ],
-  selector: 'target-167',
-  template: 'target',
+    providers: [
+        {
+            multi: true,
+            provide: NG_VALUE_ACCESSOR,
+            useExisting: forwardRef(() => TargetComponent),
+        },
+        {
+            multi: true,
+            provide: NG_VALIDATORS,
+            useExisting: forwardRef(() => TargetComponent),
+        },
+    ],
+    selector: 'target-167',
+    template: 'target',
+    standalone: false
 })
 class TargetComponent implements ControlValueAccessor, Validator {
   public valRegisterOnChange: any;
@@ -66,8 +67,9 @@ class TargetComponent implements ControlValueAccessor, Validator {
 }
 
 @Component({
-  selector: 'app-root-167-component',
-  template: '<target-167 [formControl]="control"></target-167>',
+    selector: 'app-root-167-component',
+    template: '<target-167 [formControl]="control"></target-167>',
+    standalone: false
 })
 class RealComponent {
   public readonly control = new FormControl('mock');

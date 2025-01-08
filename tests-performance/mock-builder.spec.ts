@@ -16,13 +16,15 @@ class TargetService {
 }
 
 @Directive({
-  selector: 'target',
+    selector: 'target',
+    standalone: false
 })
 class TargetDirective {}
 
 @Component({
-  selector: 'target',
-  template: '{{ service.name }}',
+    selector: 'target',
+    template: '{{ service.name }}',
+    standalone: false
 })
 class TargetComponent {
   public constructor(public readonly service: TargetService) {}

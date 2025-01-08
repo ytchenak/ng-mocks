@@ -15,7 +15,8 @@ import {
 } from 'ng-mocks';
 
 @Directive({
-  selector: 'target-double-decorator-with-selector',
+    selector: 'target-double-decorator-with-selector',
+    standalone: false
 })
 class BaseDirective {
   public name = 'directive';
@@ -25,9 +26,10 @@ class BaseDirective {
 class MyProvider extends BaseDirective {}
 
 @Component({
-  providers: [MyProvider],
-  selector: 'target-double-decorator-with-selector',
-  template: '{{ service.name }}',
+    providers: [MyProvider],
+    selector: 'target-double-decorator-with-selector',
+    template: '{{ service.name }}',
+    standalone: false
 })
 class MyComponent {
   public constructor(public readonly service: MyProvider) {}

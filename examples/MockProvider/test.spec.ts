@@ -34,12 +34,13 @@ class Dependency2Service {
 }
 
 @Component({
-  selector: 'target',
-  template: `
+    selector: 'target',
+    template: `
     "{{ dep1.name }}" "{{ dep2.name }}" "{{ unk }}" "{{ pri }}" "{{
       str
     }}" "{{ obj | json }}"
   `,
+    standalone: false
 })
 class TargetComponent {
   public constructor(

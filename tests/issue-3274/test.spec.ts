@@ -3,8 +3,9 @@ import { Component } from '@angular/core';
 import { MockComponent } from 'ng-mocks';
 
 @Component({
-  selector: 'target-3274',
-  template: '',
+    selector: 'target-3274',
+    template: '',
+    standalone: false
 })
 class TargetComponent {}
 

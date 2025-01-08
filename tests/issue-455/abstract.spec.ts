@@ -37,14 +37,20 @@ const injectableArgs = [
 @Injectable(...injectableArgs)
 abstract class InjectedAbstraction {}
 
-@Component({ template: '' })
+@Component({
+    template: '',
+    standalone: false
+})
 class TestWithoutDecoratorComponent {
   public constructor(
     public myInjectedAbstraction: InjectedAbstraction,
   ) {}
 }
 
-@Component({ template: '' })
+@Component({
+    template: '',
+    standalone: false
+})
 class TestWithDecoratorComponent {
   public constructor(
     @Inject(InjectedAbstraction)

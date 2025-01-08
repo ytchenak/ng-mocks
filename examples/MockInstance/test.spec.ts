@@ -16,8 +16,9 @@ EMPTY.complete();
 
 // A child component that contains update$ the parent component wants to listen to.
 @Component({
-  selector: 'child',
-  template: '{{ update$ | async }}',
+    selector: 'child',
+    template: '{{ update$ | async }}',
+    standalone: false
 })
 class ChildComponent {
   public readonly update$: Observable<void> = EMPTY;
@@ -29,8 +30,9 @@ class ChildComponent {
 
 // A parent component that uses @ViewChild to listen to update$ of its child component.
 @Component({
-  selector: 'target',
-  template: '<child></child>',
+    selector: 'target',
+    template: '<child></child>',
+    standalone: false
 })
 class TargetComponent implements AfterViewInit {
   @ViewChild(ChildComponent, {} as never)

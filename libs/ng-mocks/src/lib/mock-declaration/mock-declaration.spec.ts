@@ -11,18 +11,21 @@ import {
 } from './mock-declaration';
 
 @Component({
-  selector: 'empty-template-container',
-  template: '',
+    selector: 'empty-template-container',
+    template: '',
+    standalone: false
 })
 class TargetComponent {}
 
 @Directive({
-  selector: '[target]',
+    selector: '[target]',
+    standalone: false
 })
 class TargetDirective {}
 
 @Pipe({
-  name: 'target',
+    name: 'target',
+    standalone: false
 })
 class TargetPipe implements PipeTransform {
   protected name = 'target';

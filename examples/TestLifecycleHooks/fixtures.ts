@@ -52,9 +52,10 @@ export class TargetService {
 }
 
 @Component({
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  selector: 'target-lifecycle-hooks',
-  template: '',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'target-lifecycle-hooks',
+    template: '',
+    standalone: false
 })
 export class TargetComponent
   implements OnInit, OnDestroy, OnChanges, AfterViewInit, AfterViewChecked, AfterContentInit, AfterContentChecked

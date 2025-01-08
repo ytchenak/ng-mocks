@@ -10,9 +10,9 @@ import { TestBed } from '@angular/core/testing';
 import { isMockOf, MockBuilder, MockRender, ngMocks } from 'ng-mocks';
 
 @Directive({
-  selector: 'output',
-  ['standalone' as never /* TODO: remove after upgrade to a14 */]:
-    true,
+    selector: 'output',
+    ['standalone' as never /* TODO: remove after upgrade to a14 */]: true,
+    standalone: false
 })
 class OutputDirective {
   @Output() public readonly output = new EventEmitter<void>();
@@ -21,15 +21,15 @@ class OutputDirective {
 }
 
 @Component({
-  selector: 'target',
-  template: '',
-  ['hostDirectives' as never /* TODO: remove after upgrade to a15 */]:
-    [
-      {
-        directive: OutputDirective,
-        outputs: ['output: customOutput'],
-      },
+    selector: 'target',
+    template: '',
+    ['hostDirectives' as never /* TODO: remove after upgrade to a15 */]: [
+        {
+            directive: OutputDirective,
+            outputs: ['output: customOutput'],
+        },
     ],
+    standalone: false
 })
 class TargetComponent {
   @Output() public readonly output = new EventEmitter<void>();

@@ -19,14 +19,15 @@ class ViewProviderService {
 }
 
 @Component({
-  providers: [ProviderService],
-  selector: 'hello',
-  template: `
+    providers: [ProviderService],
+    selector: 'hello',
+    template: `
     <h1 class="name">{{ name }}</h1>
     <div class="provider">{{ provider.description }}</div>
     <div class="viewProvider">{{ viewProvider.description }}</div>
   `,
-  viewProviders: [ViewProviderService],
+    viewProviders: [ViewProviderService],
+    standalone: false
 })
 class HelloComponent {
   @Input() public readonly name: string | null = null;

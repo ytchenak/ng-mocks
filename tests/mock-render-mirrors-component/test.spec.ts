@@ -18,8 +18,8 @@ import {
 } from 'ng-mocks';
 
 @Component({
-  selector: 'target-mock-render-mirrors-component',
-  template: `
+    selector: 'target-mock-render-mirrors-component',
+    template: `
     <div data-role="input1">{{ input1 || 'input1' }}</div>
     <div data-role="input2">{{ input2 || 'input2' }}</div>
     <div data-role="output1" (click)="output1.emit()">output1</div>
@@ -27,6 +27,7 @@ import {
     <div data-role="var1">{{ var1 || 'var1' }}</div>
     <div data-role="var2">{{ var2 || 'var2' }}</div>
   `,
+    standalone: false
 })
 class TargetComponent {
   @Input() public input1: string | null = null;

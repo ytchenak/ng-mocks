@@ -5,8 +5,9 @@ import { TestBed } from '@angular/core/testing';
 import { MockBuilder, MockRender, ngMocks } from 'ng-mocks';
 
 @Component({
-  selector: 'target-735-date-pipe',
-  template: '{{ stamp | date }}',
+    selector: 'target-735-date-pipe',
+    template: '{{ stamp | date }}',
+    standalone: false
 })
 class TargetComponent {
   public readonly stamp = '2021-05-01';

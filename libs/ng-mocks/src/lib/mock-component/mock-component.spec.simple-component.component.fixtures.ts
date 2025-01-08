@@ -1,17 +1,19 @@
 import { Component, EventEmitter, HostBinding, Input, Output } from '@angular/core';
 
 @Component({
-  selector: 'base-simple-component',
-  template: 'some template',
+    selector: 'base-simple-component',
+    template: 'some template',
+    standalone: false
 })
 export class BaseSimpleComponent {
   @Output() public readonly someOutput2 = new EventEmitter<string>();
 }
 
 @Component({
-  exportAs: 'simple',
-  selector: 'simple-component',
-  template: 'some template',
+    exportAs: 'simple',
+    selector: 'simple-component',
+    template: 'some template',
+    standalone: false
 })
 export class SimpleComponent extends BaseSimpleComponent {
   @Input() public someInput = '';

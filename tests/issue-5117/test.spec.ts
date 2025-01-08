@@ -11,11 +11,10 @@ import { TestBed } from '@angular/core/testing';
 import { isMockOf, MockBuilder, MockRender, ngMocks } from 'ng-mocks';
 
 @Directive({
-  selector: 'target1',
-  ['standalone' as never /* TODO: remove after upgrade to a15 */]:
-    true,
-  ['hostDirectives' as never /* TODO: remove after upgrade to a15 */]:
-    [],
+    selector: 'target1',
+    ['standalone' as never /* TODO: remove after upgrade to a15 */]: true,
+    ['hostDirectives' as never /* TODO: remove after upgrade to a15 */]: [],
+    standalone: false
 })
 class Target1Directive {
   @Input() public readonly input: string | undefined = undefined;
@@ -25,11 +24,10 @@ class Target1Directive {
 }
 
 @Directive({
-  selector: 'target2',
-  ['standalone' as never /* TODO: remove after upgrade to a15 */]:
-    true,
-  ['hostDirectives' as never /* TODO: remove after upgrade to a15 */]:
-    [Target1Directive],
+    selector: 'target2',
+    ['standalone' as never /* TODO: remove after upgrade to a15 */]: true,
+    ['hostDirectives' as never /* TODO: remove after upgrade to a15 */]: [Target1Directive],
+    standalone: false
 })
 class Target2Directive {
   @Input() public readonly input: string | undefined = undefined;
@@ -39,16 +37,16 @@ class Target2Directive {
 }
 
 @Component({
-  selector: 'target',
-  template: '',
-  ['hostDirectives' as never /* TODO: remove after upgrade to a15 */]:
-    [
-      {
-        directive: Target2Directive,
-        inputs: ['input: customInput'],
-        outputs: ['output: customOutput'],
-      },
+    selector: 'target',
+    template: '',
+    ['hostDirectives' as never /* TODO: remove after upgrade to a15 */]: [
+        {
+            directive: Target2Directive,
+            inputs: ['input: customInput'],
+            outputs: ['output: customOutput'],
+        },
     ],
+    standalone: false
 })
 class TargetComponent {
   @Input() public readonly input: string | undefined = undefined;
@@ -58,9 +56,9 @@ class TargetComponent {
 }
 
 @Component({
-  selector: 'render',
-  template:
-    '<target [input]="input" (output)="output()" [customInput]="customInput" (customOutput)="customOutput()"></target>',
+    selector: 'render',
+    template: '<target [input]="input" (output)="output()" [customInput]="customInput" (customOutput)="customOutput()"></target>',
+    standalone: false
 })
 class RenderComponent {
   public readonly input = 'input';

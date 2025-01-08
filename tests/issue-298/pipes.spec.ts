@@ -4,8 +4,9 @@ import { By } from '@angular/platform-browser';
 import { MockBuilder, MockRender, ngMocks } from 'ng-mocks';
 
 @Pipe({
-  name: 'pipe',
-  pure: false,
+    name: 'pipe',
+    pure: false,
+    standalone: false
 })
 class MyPipe implements PipeTransform {
   public lastValue: any;
@@ -18,12 +19,13 @@ class MyPipe implements PipeTransform {
 }
 
 @Component({
-  selector: 'app',
-  template: `
+    selector: 'app',
+    template: `
     <div class="p1">{{ 'd1' | pipe }}</div>
     <div class="p2">{{ 'd2' | pipe }}</div>
     <div class="p3">{{ 'd3' | pipe }}</div>
   `,
+    standalone: false
 })
 class AppComponent {}
 

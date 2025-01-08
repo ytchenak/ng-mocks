@@ -8,15 +8,17 @@ import {
 import { MockBuilder, MockRender, ngMocks } from 'ng-mocks';
 
 @Directive({
-  selector: '[test]',
+    selector: '[test]',
+    standalone: false
 })
 class TargetDirective {
   constructor(@Attribute('test') public readonly test: string) {}
 }
 
 @Component({
-  selector: 'target-mock-render-attribute',
-  template: `{{ test }}`,
+    selector: 'target-mock-render-attribute',
+    template: `{{ test }}`,
+    standalone: false
 })
 class TargetComponent extends TargetDirective {
   constructor(@Attribute('test') public readonly test: string) {

@@ -30,8 +30,9 @@ import { MockedDirective } from './types';
 class TargetService {}
 
 @Directive({
-  exportAs: 'foo',
-  selector: '[exampleDirective]',
+    exportAs: 'foo',
+    selector: '[exampleDirective]',
+    standalone: false
 })
 class ExampleDirective {
   @Input() public exampleDirective = '';
@@ -48,15 +49,17 @@ class ExampleDirective {
 }
 
 @Directive({
-  providers: [TargetService],
-  selector: '[exampleStructuralDirective]',
+    providers: [TargetService],
+    selector: '[exampleStructuralDirective]',
+    standalone: false
 })
 class ExampleStructuralDirective {
   @Input() public exampleStructuralDirective = true;
 }
 
 @Directive({
-  selector: '[getters-and-setters]',
+    selector: '[getters-and-setters]',
+    standalone: false
 })
 class GettersAndSettersDirective {
   @Input()
@@ -80,8 +83,8 @@ class GettersAndSettersDirective {
 }
 
 @Component({
-  selector: 'example-component-container',
-  template: `
+    selector: 'example-component-container',
+    template: `
     <div
       [exampleDirective]="'bye'"
       [bah]="'hi'"
@@ -98,6 +101,7 @@ class GettersAndSettersDirective {
     <input [formControl]="fooControl" />
     <div getters-and-setters></div>
   `,
+    standalone: false
 })
 class ExampleContainerComponent {
   @ViewChild(ExampleDirective, {} as never)
@@ -260,8 +264,9 @@ describe('MockDirective', () => {
 
   it('A9 correct mocking of ContentChild, ContentChildren, ViewChild, ViewChildren ISSUE #109', () => {
     @Directive({
-      selector: 'never',
-    })
+    selector: 'never',
+    standalone: false
+})
     class MyDirective {
       @ContentChild('i1', { read: TemplateRef } as never)
       public o1?: TemplateRef<any>;

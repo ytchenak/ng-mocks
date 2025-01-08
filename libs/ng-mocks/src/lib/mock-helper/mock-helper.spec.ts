@@ -15,8 +15,9 @@ import { MockRender } from '../mock-render/mock-render';
 import { ngMocks } from './mock-helper';
 
 @Directive({
-  exportAs: 'foo',
-  selector: '[exampleDirective]',
+    exportAs: 'foo',
+    selector: '[exampleDirective]',
+    standalone: false
 })
 export class ExampleDirective {
   @Input() public exampleDirective = '';
@@ -33,21 +34,24 @@ export class ExampleDirective {
 }
 
 @Directive({
-  selector: '[exampleStructuralDirective]',
+    selector: '[exampleStructuralDirective]',
+    standalone: false
 })
 export class ExampleStructuralDirective {
   @Input() public exampleStructuralDirective = true;
 }
 
 @Component({
-  selector: 'component-a',
-  template: 'body-a',
+    selector: 'component-a',
+    template: 'body-a',
+    standalone: false
 })
 export class AComponent {}
 
 @Component({
-  selector: 'component-b',
-  template: 'body-b',
+    selector: 'component-b',
+    template: 'body-b',
+    standalone: false
 })
 export class BComponent {}
 

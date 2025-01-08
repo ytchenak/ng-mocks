@@ -10,9 +10,10 @@ import { TestBed } from '@angular/core/testing';
 import { MockBuilder, MockRender, ngMocks } from 'ng-mocks';
 
 @Component({
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  selector: 'target-ng-mocks-render-parameters',
-  template: '{{ value1 }}:{{ value2 }}',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'target-ng-mocks-render-parameters',
+    template: '{{ value1 }}:{{ value2 }}',
+    standalone: false
 })
 class TargetComponent {
   @Output() public readonly update = new EventEmitter<void>();

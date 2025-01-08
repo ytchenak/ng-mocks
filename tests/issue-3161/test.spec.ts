@@ -10,7 +10,8 @@ import {
 import { MockBuilder, MockRender, ngMocks } from 'ng-mocks';
 
 @Pipe({
-  name: 'translate',
+    name: 'translate',
+    standalone: false
 })
 class TranslatePipe implements PipeTransform {
   transform(value: string) {
@@ -25,7 +26,8 @@ class TranslatePipe implements PipeTransform {
 class TranslateModule {}
 
 @Pipe({
-  name: 'translate',
+    name: 'translate',
+    standalone: false
 })
 class MockTranslatePipe implements PipeTransform {
   transform(value: string) {
@@ -42,13 +44,13 @@ class MockTranslateModule {}
 ngMocks.globalReplace(TranslateModule, MockTranslateModule);
 
 @Component({
-  selector: 'standalone',
-  template: `{{ name | translate }}`,
-  ['standalone' as never /* TODO: remove after upgrade to a14 */]:
-    true,
-  ['imports' as never /* TODO: remove after upgrade to a14 */]: [
-    TranslateModule,
-  ],
+    selector: 'standalone',
+    template: `{{ name | translate }}`,
+    ['standalone' as never /* TODO: remove after upgrade to a14 */]: true,
+    ['imports' as never /* TODO: remove after upgrade to a14 */]: [
+        TranslateModule,
+    ],
+    standalone: false
 })
 class StandaloneComponent {
   @Input() public readonly name: string = '';

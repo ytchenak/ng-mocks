@@ -9,7 +9,8 @@ import { By } from '@angular/platform-browser';
 import { MockBuilder, MockRender, ngMocks } from 'ng-mocks';
 
 @Directive({
-  selector: '[myDirective]',
+    selector: '[myDirective]',
+    standalone: false
 })
 class MyDirective {
   @Input() public readonly value: string | null = null;

@@ -3,7 +3,8 @@ import { Pipe, PipeTransform } from '@angular/core';
 import { MockBuilder, MockRender, ngMocks } from 'ng-mocks';
 
 @Pipe({
-  name: 'phone',
+    name: 'phone',
+    standalone: false
 })
 class PhonePipe implements PipeTransform {
   transform(value: string | number): string {

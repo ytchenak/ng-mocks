@@ -8,8 +8,9 @@ import {
 } from 'ng-mocks';
 
 @Component({
-  selector: 'target',
-  template: '{{ value }}',
+    selector: 'target',
+    template: '{{ value }}',
+    standalone: false
 })
 class TargetComponent implements OnInit {
   public value = 0;

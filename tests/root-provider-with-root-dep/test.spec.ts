@@ -32,8 +32,9 @@ class TargetService {
 }
 
 @Component({
-  selector: 'target-root-provider-with-root-dep',
-  template: ' "name:{{ service ? service.name : \'\' }}" ',
+    selector: 'target-root-provider-with-root-dep',
+    template: ' "name:{{ service ? service.name : \'\' }}" ',
+    standalone: false
 })
 class TargetComponent {
   public constructor(public readonly service: TargetService) {}

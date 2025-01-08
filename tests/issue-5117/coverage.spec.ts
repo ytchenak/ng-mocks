@@ -11,9 +11,9 @@ import { TestBed } from '@angular/core/testing';
 import { isMockOf, MockDirectives, ngMocks } from 'ng-mocks';
 
 @Directive({
-  selector: 'base',
-  ['standalone' as never /* TODO: remove after upgrade to a14 */]:
-    true,
+    selector: 'base',
+    ['standalone' as never /* TODO: remove after upgrade to a14 */]: true,
+    standalone: false
 })
 class BaseDirective {
   @Input() public readonly input: string | undefined = undefined;
@@ -23,11 +23,10 @@ class BaseDirective {
 }
 
 @Directive({
-  selector: 'input',
-  ['standalone' as never /* TODO: remove after upgrade to a14 */]:
-    true,
-  ['hostDirectives' as never /* TODO: remove after upgrade to a15 */]:
-    [BaseDirective],
+    selector: 'input',
+    ['standalone' as never /* TODO: remove after upgrade to a14 */]: true,
+    ['hostDirectives' as never /* TODO: remove after upgrade to a15 */]: [BaseDirective],
+    standalone: false
 })
 class InputDirective {
   @Input() public readonly input: string | undefined = undefined;
@@ -36,16 +35,15 @@ class InputDirective {
 }
 
 @Directive({
-  selector: 'output',
-  ['standalone' as never /* TODO: remove after upgrade to a15 */]:
-    true,
-  ['hostDirectives' as never /* TODO: remove after upgrade to a15 */]:
-    [
-      {
-        directive: InputDirective,
-        inputs: ['input: customInput'],
-      },
+    selector: 'output',
+    ['standalone' as never /* TODO: remove after upgrade to a15 */]: true,
+    ['hostDirectives' as never /* TODO: remove after upgrade to a15 */]: [
+        {
+            directive: InputDirective,
+            inputs: ['input: customInput'],
+        },
     ],
+    standalone: false
 })
 class OutputDirective {
   @Input() public readonly input: string | undefined = undefined;
@@ -55,16 +53,16 @@ class OutputDirective {
 }
 
 @Component({
-  selector: 'target',
-  template: '',
-  ['hostDirectives' as never /* TODO: remove after upgrade to a15 */]:
-    [
-      {
-        directive: OutputDirective,
-        inputs: ['input: customInput'],
-        outputs: ['output: customOutput'],
-      },
+    selector: 'target',
+    template: '',
+    ['hostDirectives' as never /* TODO: remove after upgrade to a15 */]: [
+        {
+            directive: OutputDirective,
+            inputs: ['input: customInput'],
+            outputs: ['output: customOutput'],
+        },
     ],
+    standalone: false
 })
 class TargetComponent {
   @Input() public readonly input: string | undefined = undefined;
@@ -74,9 +72,9 @@ class TargetComponent {
 }
 
 @Component({
-  selector: 'render',
-  template:
-    '<target [input]="input" (output)="output()" [customInput]="customInput" (customOutput)="customOutput()"></target>',
+    selector: 'render',
+    template: '<target [input]="input" (output)="output()" [customInput]="customInput" (customOutput)="customOutput()"></target>',
+    standalone: false
 })
 class RenderComponent {
   public readonly input = 'input';

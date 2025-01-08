@@ -3,8 +3,9 @@ import { Component, Input, NgModule } from '@angular/core';
 import { MockBuilder, MockRenderFactory, ngMocks } from 'ng-mocks';
 
 @Component({
-  selector: 'target-mock-render-factory-tpl',
-  template: '{{ i1 }}:{{ i2 }}:{{ i3 }}',
+    selector: 'target-mock-render-factory-tpl',
+    template: '{{ i1 }}:{{ i2 }}:{{ i3 }}',
+    standalone: false
 })
 class TargetComponent {
   public readonly i0 = 0;

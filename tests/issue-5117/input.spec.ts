@@ -4,9 +4,9 @@ import { TestBed } from '@angular/core/testing';
 import { isMockOf, MockBuilder, MockRender, ngMocks } from 'ng-mocks';
 
 @Directive({
-  selector: 'input',
-  ['standalone' as never /* TODO: remove after upgrade to a14 */]:
-    true,
+    selector: 'input',
+    ['standalone' as never /* TODO: remove after upgrade to a14 */]: true,
+    standalone: false
 })
 class InputDirective {
   @Input() public readonly input: string | undefined = undefined;
@@ -15,15 +15,15 @@ class InputDirective {
 }
 
 @Component({
-  selector: 'target',
-  template: '',
-  ['hostDirectives' as never /* TODO: remove after upgrade to a15 */]:
-    [
-      {
-        directive: InputDirective,
-        inputs: ['input: customInput'],
-      },
+    selector: 'target',
+    template: '',
+    ['hostDirectives' as never /* TODO: remove after upgrade to a15 */]: [
+        {
+            directive: InputDirective,
+            inputs: ['input: customInput'],
+        },
     ],
+    standalone: false
 })
 class TargetComponent {
   @Input() public readonly input: string | undefined = undefined;

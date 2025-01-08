@@ -11,9 +11,9 @@ import { MockBuilder, MockRender, ngMocks } from 'ng-mocks';
 
 // A simple standalone pipe we are going to mock.
 @Pipe({
-  name: 'standalone',
-  ['standalone' as never /* TODO: remove after upgrade to a14 */]:
-    true,
+    name: 'standalone',
+    ['standalone' as never /* TODO: remove after upgrade to a14 */]: true,
+    standalone: false
 })
 class StandalonePipe implements PipeTransform {
   transform(value: string | null): string {
@@ -23,8 +23,9 @@ class StandalonePipe implements PipeTransform {
 
 // A simple dependency component we are going to mock.
 @Component({
-  selector: 'dependency-standalone-component',
-  template: '<ng-content></ng-content>',
+    selector: 'dependency-standalone-component',
+    template: '<ng-content></ng-content>',
+    standalone: false
 })
 class DependencyComponent {
   @Input() public readonly name: string | null = null;
@@ -39,16 +40,16 @@ class DependencyModule {}
 
 // A standalone component we are going to test.
 @Component({
-  selector: 'standalone',
-  template: `<dependency-standalone-component [name]="name">{{
+    selector: 'standalone',
+    template: `<dependency-standalone-component [name]="name">{{
     name | standalone
   }}</dependency-standalone-component>`,
-  ['standalone' as never /* TODO: remove after upgrade to a14 */]:
-    true,
-  ['imports' as never /* TODO: remove after upgrade to a14 */]: [
-    DependencyModule,
-    StandalonePipe,
-  ],
+    ['standalone' as never /* TODO: remove after upgrade to a14 */]: true,
+    ['imports' as never /* TODO: remove after upgrade to a14 */]: [
+        DependencyModule,
+        StandalonePipe,
+    ],
+    standalone: false
 })
 class StandaloneComponent {
   @Input() public readonly name: string | null = null;

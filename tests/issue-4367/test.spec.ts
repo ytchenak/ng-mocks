@@ -20,8 +20,9 @@ class TargetService {
 }
 
 @Component({
-  selector: 'target-4367',
-  template: '',
+    selector: 'target-4367',
+    template: '',
+    standalone: false
 })
 class TargetComponent {
   constructor(public readonly service: TargetService) {}

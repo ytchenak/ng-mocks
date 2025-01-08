@@ -25,14 +25,16 @@ class TargetService {
 }
 
 @Directive({
-  selector: 'target-ng-mocks-global-mock',
+    selector: 'target-ng-mocks-global-mock',
+    standalone: false
 })
 class TargetDirective {
   public constructor(public readonly service: TargetService) {}
 }
 
 @Directive({
-  selector: 'target-ng-mocks-global-mock',
+    selector: 'target-ng-mocks-global-mock',
+    standalone: false
 })
 class MockDirective {
   public constructor(public readonly service: TargetService) {}

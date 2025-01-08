@@ -21,15 +21,17 @@ class TargetService {
 }
 
 @Directive({
-  selector: 'target-3053',
+    selector: 'target-3053',
+    standalone: false
 })
 class TargetDirective {
   constructor(@Self() public service: TargetService) {}
 }
 
 @Component({
-  selector: 'target-3053',
-  template: ``,
+    selector: 'target-3053',
+    template: ``,
+    standalone: false
 })
 class TargetComponent {
   constructor(@Self() public service: TargetService) {}

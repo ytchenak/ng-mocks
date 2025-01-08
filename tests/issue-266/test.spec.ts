@@ -11,14 +11,16 @@ import {
 import { MockBuilder, MockRender, ngMocks } from 'ng-mocks';
 
 @Component({
-  template: 'target',
+    template: 'target',
+    standalone: false
 })
 class TargetComponent {
   public readonly name = 'component';
 }
 
 @Directive({
-  selector: '[target],[target1]',
+    selector: '[target],[target1]',
+    standalone: false
 })
 class TargetDirective {
   public readonly name = 'directive';
@@ -26,7 +28,8 @@ class TargetDirective {
 }
 
 @Pipe({
-  name: 'target',
+    name: 'target',
+    standalone: false
 })
 class TargetPipe implements PipeTransform {
   public readonly value = '';

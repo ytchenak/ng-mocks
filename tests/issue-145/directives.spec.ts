@@ -4,31 +4,34 @@ import { NG_VALIDATORS, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { MockBuilder, MockRender, ngMocks } from 'ng-mocks';
 
 @Directive({
-  selector: 'directive1',
+    selector: 'directive1',
+    standalone: false
 })
 class DefaultDirective {}
 
 @Directive({
-  providers: [
-    {
-      multi: true,
-      provide: NG_VALUE_ACCESSOR,
-      useExisting: ValueAccessorDirective,
-    },
-  ],
-  selector: 'directive2',
+    providers: [
+        {
+            multi: true,
+            provide: NG_VALUE_ACCESSOR,
+            useExisting: ValueAccessorDirective,
+        },
+    ],
+    selector: 'directive2',
+    standalone: false
 })
 class ValueAccessorDirective {}
 
 @Directive({
-  providers: [
-    {
-      multi: true,
-      provide: NG_VALIDATORS,
-      useExisting: ValidatorDirective,
-    },
-  ],
-  selector: 'directive3',
+    providers: [
+        {
+            multi: true,
+            provide: NG_VALIDATORS,
+            useExisting: ValidatorDirective,
+        },
+    ],
+    selector: 'directive3',
+    standalone: false
 })
 class ValidatorDirective {}
 

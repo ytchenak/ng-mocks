@@ -27,9 +27,9 @@ class RootService {
 
 // A standalone directive we are going to test.
 @Directive({
-  selector: 'standalone',
-  ['standalone' as never /* TODO: remove after upgrade to a14 */]:
-    true,
+    selector: 'standalone',
+    ['standalone' as never /* TODO: remove after upgrade to a14 */]: true,
+    standalone: false
 })
 class StandaloneDirective implements OnInit {
   @Input() public readonly name: string | null = null;

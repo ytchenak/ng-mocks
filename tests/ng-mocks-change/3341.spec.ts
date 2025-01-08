@@ -9,14 +9,15 @@ import {
 import { MockBuilder, MockRender, ngMocks } from 'ng-mocks';
 
 @Directive({
-  providers: [
-    {
-      multi: true,
-      provide: NG_VALUE_ACCESSOR,
-      useExisting: CvaDirective,
-    },
-  ],
-  selector: 'custom',
+    providers: [
+        {
+            multi: true,
+            provide: NG_VALUE_ACCESSOR,
+            useExisting: CvaDirective,
+        },
+    ],
+    selector: 'custom',
+    standalone: false
 })
 class CvaDirective implements ControlValueAccessor {
   public registerOnChange = (fn: never) =>
@@ -31,8 +32,9 @@ class CvaDirective implements ControlValueAccessor {
 }
 
 @Component({
-  selector: 'target-ng-mocks-change-3341',
-  template: ` <custom [formControl]="myControl"></custom> `,
+    selector: 'target-ng-mocks-change-3341',
+    template: ` <custom [formControl]="myControl"></custom> `,
+    standalone: false
 })
 class TargetComponent {
   public readonly myControl = new FormControl();

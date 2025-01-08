@@ -17,9 +17,10 @@ class BaseClass {
 class MyProvider extends BaseClass {}
 
 @Component({
-  providers: [MyProvider],
-  selector: 'target-double-decorator-without-selector-ivy',
-  template: '{{ service.name }}',
+    providers: [MyProvider],
+    selector: 'target-double-decorator-without-selector-ivy',
+    template: '{{ service.name }}',
+    standalone: false
 })
 class MyComponent {
   public constructor(public readonly service: MyProvider) {}

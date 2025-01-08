@@ -8,10 +8,11 @@ import {
 import { MockBuilder, MockRenderFactory, ngMocks } from 'ng-mocks';
 
 @Component({
-  selector: 'target-621',
-  template: `<button (click)="update.emit(value)">
+    selector: 'target-621',
+    template: `<button (click)="update.emit(value)">
     {{ value }}
   </button>`,
+    standalone: false
 })
 class TargetComponent {
   @Output() public readonly update = new EventEmitter<

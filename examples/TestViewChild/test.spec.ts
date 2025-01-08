@@ -14,8 +14,9 @@ import {
 import { MockBuilder, MockRender, ngMocks } from 'ng-mocks';
 
 @Component({
-  selector: 'child',
-  template: 'child',
+    selector: 'child',
+    template: 'child',
+    standalone: false
 })
 class ChildComponent {
   @Input() public child: number | null = null;
@@ -26,7 +27,8 @@ class ChildComponent {
 }
 
 @Directive({
-  selector: '[child]',
+    selector: '[child]',
+    standalone: false
 })
 class ChildDirective {
   @Input() public child: number | null = null;
@@ -35,8 +37,8 @@ class ChildDirective {
 }
 
 @Component({
-  selector: 'target',
-  template: `
+    selector: 'target',
+    template: `
     <child [child]="0" (trigger)="value = $event"></child>
     <div>
       <span [child]="1" (trigger)="value = $event">1</span>
@@ -47,6 +49,7 @@ class ChildDirective {
       {{ value }}
     </ng-template>
   `,
+    standalone: false
 })
 class TargetComponent {
   @ViewChild(ChildComponent, {} as never)

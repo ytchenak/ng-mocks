@@ -3,14 +3,16 @@ import { Component, NgModule } from '@angular/core';
 import { MockBuilder, MockRender, ngMocks } from 'ng-mocks';
 
 @Component({
-  selector: 'target1-885',
-  template: 'target1',
+    selector: 'target1-885',
+    template: 'target1',
+    standalone: false
 })
 class Target1Component {}
 
 @Component({
-  selector: 'target2-885',
-  template: 'target2',
+    selector: 'target2-885',
+    template: 'target2',
+    standalone: false
 })
 class Target2Component {}
 

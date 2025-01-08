@@ -9,12 +9,13 @@ import {
 } from 'ng-mocks';
 
 @Component({
-  selector: 'target',
-  template: `
+    selector: 'target',
+    template: `
     <div
       [innerHTML]="sanitizer.sanitize(1, '<strong>value1</strong>')"
     ></div>
   `,
+    standalone: false
 })
 class TargetComponent {
   public constructor(public readonly sanitizer: DomSanitizer) {}

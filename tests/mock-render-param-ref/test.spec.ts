@@ -8,8 +8,9 @@ import {
 import { MockBuilder, MockRender } from 'ng-mocks';
 
 @Component({
-  selector: 'target-mock-render-param-ref',
-  template: '="{{ input }}"=',
+    selector: 'target-mock-render-param-ref',
+    template: '="{{ input }}"=',
+    standalone: false
 })
 class TargetComponent {
   @Input() public input: string | null = null;

@@ -29,9 +29,10 @@ class TargetService {
 }
 
 @Component({
-  providers: [TargetService, TargetChildService],
-  selector: 'target-170',
-  template: 'target {{ service.print() }}',
+    providers: [TargetService, TargetChildService],
+    selector: 'target-170',
+    template: 'target {{ service.print() }}',
+    standalone: false
 })
 class TargetComponent {
   public constructor(public service: TargetService) {}
@@ -42,8 +43,9 @@ class TargetComponent {
 }
 
 @Component({
-  selector: 'real',
-  template: '<target-170></target-170>',
+    selector: 'real',
+    template: '<target-170></target-170>',
+    standalone: false
 })
 class RealComponent implements AfterViewInit {
   @ViewChild(TargetComponent, {} as never)

@@ -4,8 +4,9 @@ import { TestBed } from '@angular/core/testing';
 import { MockModule, MockRender, ngMocks } from 'ng-mocks';
 
 @Component({
-  selector: 'target-ng-mocks-global-replace-modules',
-  template: '{{ name }}',
+    selector: 'target-ng-mocks-global-replace-modules',
+    template: '{{ name }}',
+    standalone: false
 })
 class Target1Component {
   public readonly name = 'target1';
@@ -22,8 +23,9 @@ class Target1Component {
 class Target1Module {}
 
 @Component({
-  selector: 'target-ng-mocks-global-replace-modules',
-  template: '{{ name }}',
+    selector: 'target-ng-mocks-global-replace-modules',
+    template: '{{ name }}',
+    standalone: false
 })
 class Target2Component {
   public readonly name = 'target2';

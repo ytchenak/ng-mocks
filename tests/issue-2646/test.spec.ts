@@ -18,7 +18,8 @@ class TargetService {
 }
 
 @Directive({
-  selector: 'target-2646',
+    selector: 'target-2646',
+    standalone: false
 })
 class TargetDirective {
   echo() {
@@ -27,8 +28,9 @@ class TargetDirective {
 }
 
 @Component({
-  selector: 'target-2646',
-  template: '{{ echo() | target }}',
+    selector: 'target-2646',
+    template: '{{ echo() | target }}',
+    standalone: false
 })
 class TargetComponent {
   echo() {
@@ -42,8 +44,9 @@ class TargetComponent {
 describe('issue-2646', () => {
   describe('directive', () => {
     @Directive({
-      selector: 'target-2646',
-    })
+    selector: 'target-2646',
+    standalone: false
+})
     class ServiceToDirective extends TargetService {
       echo() {
         return `ServiceToDirective`;
@@ -97,9 +100,10 @@ describe('issue-2646', () => {
 
   describe('component', () => {
     @Component({
-      selector: 'target-2646',
-      template: 'target',
-    })
+    selector: 'target-2646',
+    template: 'target',
+    standalone: false
+})
     class ServiceToComponent extends TargetService {
       echo() {
         return `ServiceToComponent`;
@@ -153,8 +157,9 @@ describe('issue-2646', () => {
 
   describe('pipe', () => {
     @Pipe({
-      name: 'target',
-    })
+    name: 'target',
+    standalone: false
+})
     class PipeFromService
       extends TargetService
       implements PipeTransform

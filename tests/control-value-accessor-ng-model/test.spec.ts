@@ -15,9 +15,9 @@ import {
 } from 'ng-mocks';
 
 @Component({
-  selector: 'target-cva-ng-model',
-  template:
-    '<control-cva-ng-model [(ngModel)]="value" [disabled]="disabled"></control-cva-ng-model>',
+    selector: 'target-cva-ng-model',
+    template: '<control-cva-ng-model [(ngModel)]="value" [disabled]="disabled"></control-cva-ng-model>',
+    standalone: false
 })
 class TargetComponent {
   public disabled = false;
@@ -33,15 +33,16 @@ class TargetComponent {
 }
 
 @Component({
-  providers: [
-    {
-      multi: true,
-      provide: NG_VALUE_ACCESSOR,
-      useExisting: forwardRef(() => ControlComponent),
-    },
-  ],
-  selector: 'control-cva-ng-model',
-  template: '',
+    providers: [
+        {
+            multi: true,
+            provide: NG_VALUE_ACCESSOR,
+            useExisting: forwardRef(() => ControlComponent),
+        },
+    ],
+    selector: 'control-cva-ng-model',
+    template: '',
+    standalone: false
 })
 class ControlComponent implements ControlValueAccessor {
   public isDisabled = false;

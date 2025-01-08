@@ -47,7 +47,8 @@ class MockAuthService {
  * That's why click throws an error.
  */
 @Directive({
-  selector: 'button',
+    selector: 'button',
+    standalone: false
 })
 class TargetDirective {
   @Output() readonly toggle = new EventEmitter<void>();
@@ -63,7 +64,8 @@ class TargetDirective {
  * And we would like to use this mock in out tests.
  */
 @Directive({
-  selector: 'button',
+    selector: 'button',
+    standalone: false
 })
 class MockTargetDirective {
   @Output() readonly toggle = new EventEmitter<void>();

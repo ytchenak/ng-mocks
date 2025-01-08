@@ -4,11 +4,12 @@ import { DefaultValueAccessor, FormsModule } from '@angular/forms';
 import { MockBuilder, MockRender, ngMocks } from 'ng-mocks';
 
 @Component({
-  selector: 'target-ng-mocks-change-317',
-  template: `
+    selector: 'target-ng-mocks-change-317',
+    template: `
     <input data-testid="inputControl" [(ngModel)]="value" />
     <span></span>
   `,
+    standalone: false
 })
 class TargetComponent {
   public value: number | null = null;

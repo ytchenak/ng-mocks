@@ -15,34 +15,36 @@ abstract class AbstractService {
 }
 
 @Component({
-  providers: [
-    {
-      provide: TOKEN,
-      useValue: 'token1',
-    },
-    {
-      provide: AbstractService,
-      useFactory: () => ({ name: 'service1' }),
-    },
-  ],
-  selector: 'target1-2097',
-  template: ' 1 ',
+    providers: [
+        {
+            provide: TOKEN,
+            useValue: 'token1',
+        },
+        {
+            provide: AbstractService,
+            useFactory: () => ({ name: 'service1' }),
+        },
+    ],
+    selector: 'target1-2097',
+    template: ' 1 ',
+    standalone: false
 })
 class Target1Component {}
 
 @Component({
-  providers: [
-    {
-      provide: TOKEN,
-      useValue: 'token2',
-    },
-    {
-      provide: AbstractService,
-      useFactory: () => ({ name: 'service2' }),
-    },
-  ],
-  selector: 'target2-2097',
-  template: ' 2 ',
+    providers: [
+        {
+            provide: TOKEN,
+            useValue: 'token2',
+        },
+        {
+            provide: AbstractService,
+            useFactory: () => ({ name: 'service2' }),
+        },
+    ],
+    selector: 'target2-2097',
+    template: ' 2 ',
+    standalone: false
 })
 class Target2Component {}
 

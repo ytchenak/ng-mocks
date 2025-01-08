@@ -23,8 +23,9 @@ import {
 class TargetService {}
 
 @Component({
-  selector: 'target-4344-standalone',
-  template: '{{ 1 | number }}',
+    selector: 'target-4344-standalone',
+    template: '{{ 1 | number }}',
+    standalone: false
 })
 class TargetComponent {
   constructor(
@@ -41,14 +42,14 @@ class TargetComponent {
 class TargetModule {}
 
 @Component({
-  selector: 'standalone',
-  template: '{{ 1 | number }}',
-  ['standalone' as never /* TODO: remove after upgrade to a14 */]:
-    true,
-  ['imports' as never /* TODO: remove after upgrade to a14 */]: [
-    TargetModule,
-  ],
-  providers: [AsyncPipe],
+    selector: 'standalone',
+    template: '{{ 1 | number }}',
+    ['standalone' as never /* TODO: remove after upgrade to a14 */]: true,
+    ['imports' as never /* TODO: remove after upgrade to a14 */]: [
+        TargetModule,
+    ],
+    providers: [AsyncPipe],
+    standalone: false
 })
 class StandaloneComponent {
   constructor(

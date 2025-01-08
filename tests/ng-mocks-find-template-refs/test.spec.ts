@@ -16,7 +16,8 @@ const TOKEN = new InjectionToken('TOKEN');
 class NoSelectorService {}
 
 @Directive({
-  selector: 'target-ng-mocks-find-template-refs',
+    selector: 'target-ng-mocks-find-template-refs',
+    standalone: false
 })
 class NoAttributeSelectorDirective {}
 
@@ -24,22 +25,23 @@ class NoAttributeSelectorDirective {}
 class NoSelectorDirective {}
 
 @Directive({
-  providers: [
-    {
-      provide: NoAttributeSelectorDirective,
-      useExisting: TargetDirective,
-    },
-    {
-      provide: NoSelectorDirective,
-      useExisting: TargetDirective,
-    },
-    {
-      provide: TOKEN,
-      useExisting: true,
-    },
-    NoSelectorService,
-  ],
-  selector: '[target]',
+    providers: [
+        {
+            provide: NoAttributeSelectorDirective,
+            useExisting: TargetDirective,
+        },
+        {
+            provide: NoSelectorDirective,
+            useExisting: TargetDirective,
+        },
+        {
+            provide: TOKEN,
+            useExisting: true,
+        },
+        NoSelectorService,
+    ],
+    selector: '[target]',
+    standalone: false
 })
 class TargetDirective {
   @Input() public readonly target: string | null = null;
@@ -48,35 +50,39 @@ class TargetDirective {
 }
 
 @Directive({
-  selector: '[target2]',
+    selector: '[target2]',
+    standalone: false
 })
 class Target2Directive {
   public constructor(public readonly tpl: TemplateRef<any>) {}
 }
 
 @Directive({
-  selector: 'ng-template',
+    selector: 'ng-template',
+    standalone: false
 })
 class NgTemplateDirective {
   public constructor(public readonly tpl: TemplateRef<any>) {}
 }
 
 @Directive({
-  selector: '[unused]',
+    selector: '[unused]',
+    standalone: false
 })
 class UnusedDirective {
   public constructor(public readonly tpl: TemplateRef<any>) {}
 }
 
 @Component({
-  selector: 'target-ng-mocks-find-template-refs',
-  template: '',
+    selector: 'target-ng-mocks-find-template-refs',
+    template: '',
+    standalone: false
 })
 class TargetComponent {}
 
 @Component({
-  selector: 'test',
-  template: `
+    selector: 'test',
+    template: `
     <target-ng-mocks-find-template-refs>
       1
       <ng-template #id1>id1</ng-template>
@@ -97,6 +103,7 @@ class TargetComponent {}
       9
     </target-ng-mocks-find-template-refs>
   `,
+    standalone: false
 })
 class TestComponent {}
 

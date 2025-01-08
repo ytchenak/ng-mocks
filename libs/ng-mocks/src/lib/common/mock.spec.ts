@@ -52,7 +52,8 @@ class ChildModule extends ParentClass implements PipeTransform {
 }
 
 @Component({
-  template: '',
+    template: '',
+    standalone: false
 })
 class ChildComponent
   extends ParentClass
@@ -80,7 +81,8 @@ class ChildComponent
 }
 
 @Directive({
-  selector: 'mock',
+    selector: 'mock',
+    standalone: false
 })
 class ChildDirective
   extends ParentClass
@@ -108,7 +110,8 @@ class ChildDirective
 }
 
 @Pipe({
-  name: 'mock',
+    name: 'mock',
+    standalone: false
 })
 class ChildPipe extends ParentClass implements PipeTransform {
   protected childValue = true;
@@ -180,7 +183,8 @@ describe('Mock prototype', () => {
   @Component({
     selector: 'custom',
     template: '',
-  })
+    standalone: false
+})
   class CustomComponent implements ControlValueAccessor {
     public test = 'custom';
 

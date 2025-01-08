@@ -27,11 +27,12 @@ describe('issue-8884', () => {
 
   describe('standalone component without NgIf', () => {
     @Component({
-      selector: 'standalone-8884',
-      ['standalone' as never]: true,
-      ['imports' as never]: [NgTemplateOutlet],
-      template: `<ng-template [ngTemplateOutlet]="content" />`,
-    })
+    selector: 'standalone-8884',
+    ['standalone' as never]: true,
+    ['imports' as never]: [NgTemplateOutlet],
+    template: `<ng-template [ngTemplateOutlet]="content" />`,
+    standalone: false
+})
     class Standalone8884Component {
       @ContentChild('content', {} as never)
       content?: TemplateRef<any>;
@@ -73,9 +74,10 @@ describe('issue-8884', () => {
 
   describe('classic component without NgIf import in its module', () => {
     @Component({
-      selector: 'target-8884',
-      template: `<ng-template [ngTemplateOutlet]="content" />`,
-    })
+    selector: 'target-8884',
+    template: `<ng-template [ngTemplateOutlet]="content" />`,
+    standalone: false
+})
     class Target8884Component {
       @ContentChild('content', {} as never)
       content?: TemplateRef<any>;

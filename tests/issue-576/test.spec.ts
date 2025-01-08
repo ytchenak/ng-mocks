@@ -8,8 +8,9 @@ describe('issue-576', () => {
     ngMocks.faster();
 
     @Component({
-      template: '1:{{ value }}',
-    })
+    template: '1:{{ value }}',
+    standalone: false
+})
     class TargetComponent {
       @Input() public value: string | null = null;
     }
@@ -35,8 +36,9 @@ describe('issue-576', () => {
     ngMocks.faster();
 
     @Component({
-      template: '2:{{ value }}',
-    })
+    template: '2:{{ value }}',
+    standalone: false
+})
     class TargetComponent {
       @Input() public value: string | null = null;
     }

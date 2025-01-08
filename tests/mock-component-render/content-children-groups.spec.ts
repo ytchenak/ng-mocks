@@ -11,21 +11,23 @@ import {
 import { isMockOf, MockBuilder, MockRender, ngMocks } from 'ng-mocks';
 
 @Directive({
-  selector: '[appCell]',
+    selector: '[appCell]',
+    standalone: false
 })
 class CellDirective {
   public constructor(public el?: TemplateRef<any>) {}
 }
 
 @Component({
-  selector: 'app-table-mock-component-render-content-children-groups',
-  template: `
+    selector: 'app-table-mock-component-render-content-children-groups',
+    template: `
     <ng-container *ngFor="let tpl of templates">
       <ng-container
         *ngTemplateOutlet="tpl; context: { $implicit: 'real' }"
       ></ng-container>
     </ng-container>
   `,
+    standalone: false
 })
 class TableComponent {
   @ContentChildren(CellDirective, {
@@ -35,8 +37,8 @@ class TableComponent {
 }
 
 @Component({
-  selector: 'app-root-mock-component-render-content-children-groups',
-  template: ` <app-table-mock-component-render-content-children-groups>
+    selector: 'app-root-mock-component-render-content-children-groups',
+    template: ` <app-table-mock-component-render-content-children-groups>
     <ng-template appCell let-item>
       <div class="custom-data-1">1: {{ item }}</div>
     </ng-template>
@@ -47,6 +49,7 @@ class TableComponent {
       <div class="custom-data-3">3: {{ item }}</div>
     </ng-template>
   </app-table-mock-component-render-content-children-groups>`,
+    standalone: false
 })
 class AppComponent {}
 

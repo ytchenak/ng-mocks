@@ -11,7 +11,8 @@ import { MockBuilder, MockRender, ngMocks } from 'ng-mocks';
 // on mouseenter and to remove it on mouseleave.
 // By default the color is yellow.
 @Directive({
-  selector: '[target]',
+    selector: '[target]',
+    standalone: false
 })
 class TargetDirective {
   @Input() public color = 'yellow';

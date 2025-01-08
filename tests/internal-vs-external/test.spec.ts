@@ -4,15 +4,16 @@ import { Component, NgModule } from '@angular/core';
 import { MockBuilder, MockRender, ngMocks } from 'ng-mocks';
 
 @Component({
-  selector: 'internal-internal-vs-external',
-  template: 'internal',
+    selector: 'internal-internal-vs-external',
+    template: 'internal',
+    standalone: false
 })
 class InternalComponent {}
 
 @Component({
-  selector: 'external-internal-vs-external',
-  template:
-    'external <internal-internal-vs-external></internal-internal-vs-external>',
+    selector: 'external-internal-vs-external',
+    template: 'external <internal-internal-vs-external></internal-internal-vs-external>',
+    standalone: false
 })
 class ExternalComponent {}
 

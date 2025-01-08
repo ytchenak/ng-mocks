@@ -19,8 +19,9 @@ class TargetService {
 // The purpose of the directive is to add a background color
 // on mouseenter and to remove it on mouseleave.
 @Directive({
-  providers: [TargetService],
-  selector: '[target]',
+    providers: [TargetService],
+    selector: '[target]',
+    standalone: false
 })
 class TargetDirective implements OnInit {
   public constructor(

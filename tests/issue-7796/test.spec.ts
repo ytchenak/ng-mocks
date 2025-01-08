@@ -11,8 +11,9 @@ import {
 } from 'ng-mocks';
 
 @Component({
-  selector: 'route',
-  template: '{{ params$ | async }}',
+    selector: 'route',
+    template: '{{ params$ | async }}',
+    standalone: false
 })
 class RouteComponent implements OnInit {
   public params$: Observable<string | undefined> | null = null;

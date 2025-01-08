@@ -20,7 +20,8 @@ describe('issue-5465', () => {
     template: `
       <span *ngFor="let letter of this.test">{{ letter }}</span>
     `,
-  })
+    standalone: false
+})
   class AppNgForComponent {
     test = ['a', 'b'];
 
@@ -39,7 +40,8 @@ describe('issue-5465', () => {
   @Component({
     selector: 'app-root',
     template: ` <app-ng-for></app-ng-for> `,
-  })
+    standalone: false
+})
   class AppRootComponent {
     appRoot5465() {}
   }

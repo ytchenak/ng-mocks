@@ -3,8 +3,9 @@ import { Component, ContentChild, TemplateRef } from '@angular/core';
 import { MockBuilder, MockRender } from 'ng-mocks';
 
 @Component({
-  selector: 'target-567',
-  template: '<ng-content></ng-content>',
+    selector: 'target-567',
+    template: '<ng-content></ng-content>',
+    standalone: false
 })
 class TargetComponent {
   @ContentChild('s-e_-_ri23sTo 12 o#ltTem_~_plate_', {} as never)

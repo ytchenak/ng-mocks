@@ -7,39 +7,44 @@ export class Target1Service {}
 export class Target2Service {}
 
 @Component({
-  providers: [Target1Service],
-  selector: 'com-1',
-  template: 'com-1',
+    providers: [Target1Service],
+    selector: 'com-1',
+    template: 'com-1',
+    standalone: false
 })
 export class Target1Component {
   public constructor(public service: Target1Service) {}
 }
 
 @Component({
-  selector: 'com-2',
-  template: 'com-2',
+    selector: 'com-2',
+    template: 'com-2',
+    standalone: false
 })
 export class Target2Component {
   public constructor(public service: Target2Service) {}
 }
 
 @Directive({
-  providers: [Target1Service],
-  selector: 'dir-1',
+    providers: [Target1Service],
+    selector: 'dir-1',
+    standalone: false
 })
 export class Target1Directive {
   public constructor(public service: Target1Service) {}
 }
 
 @Directive({
-  selector: 'dir-2',
+    selector: 'dir-2',
+    standalone: false
 })
 export class Target2Directive {
   public constructor(public service: Target2Service) {}
 }
 
 @Pipe({
-  name: 'pip1',
+    name: 'pip1',
+    standalone: false
 })
 export class Target1Pipe implements PipeTransform {
   protected name = 'pip1';
@@ -50,7 +55,8 @@ export class Target1Pipe implements PipeTransform {
 }
 
 @Pipe({
-  name: 'pip2',
+    name: 'pip2',
+    standalone: false
 })
 export class Target2Pipe implements PipeTransform {
   protected name = 'pip2';

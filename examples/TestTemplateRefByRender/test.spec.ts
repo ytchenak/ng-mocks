@@ -13,7 +13,8 @@ import {
 import { MockBuilder, MockRender, ngMocks } from 'ng-mocks';
 
 @Directive({
-  selector: '[myTpl]',
+    selector: '[myTpl]',
+    standalone: false
 })
 class MyTplDirective {
   @Input('myTpl') public readonly name: string | null = null;
@@ -22,8 +23,9 @@ class MyTplDirective {
 }
 
 @Component({
-  selector: 'xd-card-template-ref-by-render',
-  template: '',
+    selector: 'xd-card-template-ref-by-render',
+    template: '',
+    standalone: false
 })
 class XdCardComponent {
   @ContentChild('id', {} as never)

@@ -3,8 +3,9 @@ import { Component, ContentChild } from '@angular/core';
 import { MockBuilder, MockRender } from 'ng-mocks';
 
 @Component({
-  selector: 'target-445',
-  template: '<ng-content></ng-content>',
+    selector: 'target-445',
+    template: '<ng-content></ng-content>',
+    standalone: false
 })
 class ByAttributeComponent {
   @ContentChild('[someAttribute]', {} as never)

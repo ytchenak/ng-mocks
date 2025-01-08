@@ -5,12 +5,13 @@ import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { MockBuilder } from 'ng-mocks';
 
 @Component({
-  selector: 'app-reproduction',
-  template: `
+    selector: 'app-reproduction',
+    template: `
     <div>
       <input type="text" [formControl]="control" />
     </div>
   `,
+    standalone: false
 })
 class ReproductionComponent {
   public readonly control = new FormControl();

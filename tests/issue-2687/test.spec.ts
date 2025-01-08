@@ -26,9 +26,9 @@ class StandaloneService {}
 class StandaloneModule {}
 
 @Pipe({
-  name: 'standalone',
-  ['standalone' as never /* TODO: remove after upgrade to a14 */]:
-    true,
+    name: 'standalone',
+    ['standalone' as never /* TODO: remove after upgrade to a14 */]: true,
+    standalone: false
 })
 class StandalonePipe implements PipeTransform {
   transform(): string {
@@ -37,38 +37,38 @@ class StandalonePipe implements PipeTransform {
 }
 
 @Component({
-  selector: 'standalone',
-  template: 'service:{{ service.constructor.name }}',
-  ['standalone' as never /* TODO: remove after upgrade to a14 */]:
-    true,
-  ['imports' as never /* TODO: remove after upgrade to a14 */]: [
-    StandaloneModule,
-    StandalonePipe,
-  ],
+    selector: 'standalone',
+    template: 'service:{{ service.constructor.name }}',
+    ['standalone' as never /* TODO: remove after upgrade to a14 */]: true,
+    ['imports' as never /* TODO: remove after upgrade to a14 */]: [
+        StandaloneModule,
+        StandalonePipe,
+    ],
+    standalone: false
 })
 class StandaloneComponent {
   constructor(public readonly service: StandaloneService) {}
 }
 
 @Component({
-  selector: 'empty',
-  template: 'empty',
-  ['standalone' as never /* TODO: remove after upgrade to a14 */]:
-    true,
-  ['imports' as never /* TODO: remove after upgrade to a14 */]: [], // this is the thing we assert: an empty imports array
+    selector: 'empty',
+    template: 'empty',
+    ['standalone' as never /* TODO: remove after upgrade to a14 */]: true,
+    ['imports' as never /* TODO: remove after upgrade to a14 */]: [],
+    standalone: false
 })
 class EmptyComponent {}
 
 @Component({
-  selector: 'target-2687',
-  template: '<standalone></standalone> pipe:{{ null | standalone }}',
-  ['standalone' as never /* TODO: remove after upgrade to a14 */]:
-    true,
-  ['imports' as never /* TODO: remove after upgrade to a14 */]: [
-    StandaloneComponent,
-    StandalonePipe,
-    EmptyComponent,
-  ],
+    selector: 'target-2687',
+    template: '<standalone></standalone> pipe:{{ null | standalone }}',
+    ['standalone' as never /* TODO: remove after upgrade to a14 */]: true,
+    ['imports' as never /* TODO: remove after upgrade to a14 */]: [
+        StandaloneComponent,
+        StandalonePipe,
+        EmptyComponent,
+    ],
+    standalone: false
 })
 class TargetComponent {}
 

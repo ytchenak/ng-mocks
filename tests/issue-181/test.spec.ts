@@ -9,10 +9,11 @@ import {
 import { MockBuilder, MockRender, ngMocks } from 'ng-mocks';
 
 @Component({
-  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['header'],
-  selector: 'app-target',
-  template: '<ng-content></ng-content>',
+    // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+    inputs: ['header'],
+    selector: 'app-target',
+    template: '<ng-content></ng-content>',
+    standalone: false
 })
 class TargetComponent {
   @ContentChild('header', {} as never)
@@ -20,9 +21,10 @@ class TargetComponent {
 }
 
 @Directive({
-  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['header'],
-  selector: '[appTarget]',
+    // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+    inputs: ['header'],
+    selector: '[appTarget]',
+    standalone: false
 })
 class TargetDirective {
   @ContentChild('header', {} as never)

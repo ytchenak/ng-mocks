@@ -4,8 +4,9 @@ import { TestBed } from '@angular/core/testing';
 import { MockModule, MockRender, ngMocks } from 'ng-mocks';
 
 @Component({
-  selector: 'target1-ng-mocks-global-replace-override',
-  template: '{{ name }}',
+    selector: 'target1-ng-mocks-global-replace-override',
+    template: '{{ name }}',
+    standalone: false
 })
 class Target1Component {
   public readonly name = 'target1';
@@ -16,8 +17,9 @@ class Target1Component {
 }
 
 @Component({
-  selector: 'target1-ng-mocks-global-replace-override',
-  template: '{{ name }}',
+    selector: 'target1-ng-mocks-global-replace-override',
+    template: '{{ name }}',
+    standalone: false
 })
 class Fake1Component {
   public readonly name = 'fake1';
@@ -28,16 +30,18 @@ class Fake1Component {
 }
 
 @Component({
-  selector: 'target2-ng-mocks-global-replace-override',
-  template: '{{ name }}',
+    selector: 'target2-ng-mocks-global-replace-override',
+    template: '{{ name }}',
+    standalone: false
 })
 class Target2Component {
   public readonly name = 'target2';
 }
 
 @Component({
-  selector: 'target2-ng-mocks-global-replace-override',
-  template: '{{ name }}',
+    selector: 'target2-ng-mocks-global-replace-override',
+    template: '{{ name }}',
+    standalone: false
 })
 class Fake2Component {
   public readonly name = 'fake2';

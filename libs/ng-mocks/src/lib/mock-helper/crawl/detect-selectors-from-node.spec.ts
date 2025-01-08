@@ -6,9 +6,10 @@ describe('detect-selectors-from-node', () => {
   describe('classic', () => {
     it('goes via public providers', () => {
       @Component({
-        selector: 'target',
-        template: 'target',
-      })
+    selector: 'target',
+    template: 'target',
+    standalone: false
+})
       class TargetComponent {
         @Input() public attr = 'value';
       }

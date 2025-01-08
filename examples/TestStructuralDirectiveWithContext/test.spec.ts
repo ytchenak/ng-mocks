@@ -15,7 +15,8 @@ interface ITargetContext {
 // This directive is almost the same as `ngFor`,
 // it renders every item as a new row.
 @Directive({
-  selector: '[target]',
+    selector: '[target]',
+    standalone: false
 })
 class TargetDirective {
   public constructor(

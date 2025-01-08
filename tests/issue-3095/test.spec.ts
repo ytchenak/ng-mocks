@@ -15,13 +15,14 @@ Directive({
 })(RecursiveDirective);
 
 @Directive({
-  selector: 'target-2095',
-  providers: [
-    {
-      provide: RecursiveDirective,
-      useValue: null,
-    },
-  ],
+    selector: 'target-2095',
+    providers: [
+        {
+            provide: RecursiveDirective,
+            useValue: null,
+        },
+    ],
+    standalone: false
 })
 class TargetDirective {}
 

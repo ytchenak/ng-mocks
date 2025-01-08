@@ -1,8 +1,9 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'pure',
-  pure: true,
+    name: 'pure',
+    pure: true,
+    standalone: false
 })
 export class PurePipe implements PipeTransform {
   public readonly name = 'PurePipe';
@@ -16,8 +17,9 @@ export class PurePipe implements PipeTransform {
 }
 
 @Pipe({
-  name: 'impure',
-  pure: false,
+    name: 'impure',
+    pure: false,
+    standalone: false
 })
 export class ImpurePipe implements PipeTransform {
   public readonly name = 'ImpurePipe';

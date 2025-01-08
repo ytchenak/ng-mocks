@@ -16,7 +16,8 @@ import {
 } from 'ng-mocks';
 
 @Directive({
-  selector: '[show]',
+    selector: '[show]',
+    standalone: false
 })
 class ShowDirective {
   public constructor(
@@ -34,7 +35,8 @@ class ShowDirective {
 }
 
 @Directive({
-  selector: '[hide]',
+    selector: '[hide]',
+    standalone: false
 })
 class HideDirective {
   public constructor(
@@ -52,11 +54,12 @@ class HideDirective {
 }
 
 @Component({
-  selector: 'target-971',
-  template: `
+    selector: 'target-971',
+    template: `
     <ng-container *show="flag">:show:{{ content }}:</ng-container>
     <ng-container *hide="flag">:hide:{{ content }}:</ng-container>
   `,
+    standalone: false
 })
 class TargetComponent {
   @Input() public readonly content: string | null = null;

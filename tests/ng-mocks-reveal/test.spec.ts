@@ -19,7 +19,8 @@ import { MockBuilder, MockRender, ngMocks } from 'ng-mocks';
 const TOKEN = new InjectionToken('TOKEN');
 
 @Pipe({
-  name: 'pure',
+    name: 'pure',
+    standalone: false
 })
 class PurePipe implements PipeTransform {
   public value: any;
@@ -32,8 +33,9 @@ class PurePipe implements PipeTransform {
 }
 
 @Pipe({
-  name: 'impure',
-  pure: false,
+    name: 'impure',
+    pure: false,
+    standalone: false
 })
 class ImpurePipe implements PipeTransform {
   public value: any;
@@ -46,13 +48,14 @@ class ImpurePipe implements PipeTransform {
 }
 
 @Directive({
-  providers: [
-    {
-      provide: TOKEN,
-      useValue: 'test',
-    },
-  ],
-  selector: '[tpl]',
+    providers: [
+        {
+            provide: TOKEN,
+            useValue: 'test',
+        },
+    ],
+    selector: '[tpl]',
+    standalone: false
 })
 class TplDirective {
   @Input() public readonly data: any = null;
@@ -62,13 +65,14 @@ class TplDirective {
 }
 
 @Directive({
-  providers: [
-    {
-      provide: TOKEN,
-      useValue: 'test',
-    },
-  ],
-  selector: '[tpl2]',
+    providers: [
+        {
+            provide: TOKEN,
+            useValue: 'test',
+        },
+    ],
+    selector: '[tpl2]',
+    standalone: false
 })
 class Tpl2Directive {
   @Input('tpl') public readonly name: string | null = null;
@@ -77,13 +81,14 @@ class Tpl2Directive {
 }
 
 @Directive({
-  providers: [
-    {
-      provide: TOKEN,
-      useValue: 'test',
-    },
-  ],
-  selector: '[block]',
+    providers: [
+        {
+            provide: TOKEN,
+            useValue: 'test',
+        },
+    ],
+    selector: '[block]',
+    standalone: false
 })
 class BlockDirective {
   @Input('block') public readonly name: string | null = null;
@@ -96,14 +101,15 @@ class BlockDirective {
 }
 
 @Component({
-  providers: [
-    {
-      provide: TOKEN,
-      useValue: 'test',
-    },
-  ],
-  selector: 'mock',
-  template: '',
+    providers: [
+        {
+            provide: TOKEN,
+            useValue: 'test',
+        },
+    ],
+    selector: 'mock',
+    template: '',
+    standalone: false
 })
 class MockComponent {
   @ContentChildren(BlockDirective)

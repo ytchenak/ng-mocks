@@ -3,8 +3,9 @@ import { Component, Input } from '@angular/core';
 import { MockBuilder, MockRender, ngMocks } from 'ng-mocks';
 
 @Component({
-  selector: 'target-ng-mocks-input-317',
-  template: '{{ prop }}',
+    selector: 'target-ng-mocks-input-317',
+    template: '{{ prop }}',
+    standalone: false
 })
 class TargetComponent {
   @Input() public readonly prop = null;

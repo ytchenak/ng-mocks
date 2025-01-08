@@ -33,8 +33,8 @@ import { TemplateOutletComponent } from './mock-component.spec.template-outlet.c
 import { MockedComponent } from './types';
 
 @Component({
-  selector: 'example-component-container',
-  template: `
+    selector: 'example-component-container',
+    template: `
     <getter-setter></getter-setter>
     <simple-component
       [someInput]="'hi'"
@@ -73,6 +73,7 @@ import { MockedComponent } from './types';
       >child of element-with-content-only</empty-component
     >
   `,
+    standalone: false
 })
 export class ExampleContainerComponent {
   @ViewChild(ChildComponent, { static: true } as never)
@@ -353,8 +354,9 @@ describe('MockComponent', () => {
 
   it('A9 correct mocking of ContentChild, ContentChildren, ViewChild, ViewChildren ISSUE #109', () => {
     @Component({
-      template: '',
-    })
+    template: '',
+    standalone: false
+})
     class MyComponent {
       @ContentChild('i1', { read: TemplateRef } as never)
       public o1?: TemplateRef<any>;

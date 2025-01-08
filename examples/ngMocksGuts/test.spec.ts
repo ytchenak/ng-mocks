@@ -36,7 +36,8 @@ class Target1Service {
 }
 
 @Pipe({
-  name: 'target1',
+    name: 'target1',
+    standalone: false
 })
 class Target1Pipe implements PipeTransform {
   protected readonly name = 'pipe1';
@@ -46,17 +47,19 @@ class Target1Pipe implements PipeTransform {
 }
 
 @Component({
-  selector: 'target2-ng-mocks-guts',
-  template: '<ng-content></ng-content>',
+    selector: 'target2-ng-mocks-guts',
+    template: '<ng-content></ng-content>',
+    standalone: false
 })
 class Target2Component {}
 
 @Component({
-  selector: 'target1-ng-mocks-guts',
-  template: `<div (target1)="update.emit()">
+    selector: 'target1-ng-mocks-guts',
+    template: `<div (target1)="update.emit()">
     {{ greeting }} {{ greeting | target1 }}
     <target2-ng-mocks-guts>{{ target }}</target2-ng-mocks-guts>
   </div>`,
+    standalone: false
 })
 class Target1Component {
   @Input() public greeting: string | null = null;
@@ -69,7 +72,8 @@ class Target1Component {
 }
 
 @Directive({
-  selector: '[target1]',
+    selector: '[target1]',
+    standalone: false
 })
 class Target1Directive implements OnDestroy {
   @Output()

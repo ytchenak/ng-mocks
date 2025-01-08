@@ -28,7 +28,8 @@ class TargetService {
 }
 
 @Pipe({
-  name: 'target',
+    name: 'target',
+    standalone: false
 })
 class TargetPipe implements PipeTransform {
   transform() {
@@ -37,7 +38,8 @@ class TargetPipe implements PipeTransform {
 }
 
 @Pipe({
-  name: 'standard',
+    name: 'standard',
+    standalone: false
 })
 class StandardPipe implements PipeTransform {
   transform() {
@@ -59,8 +61,9 @@ class StandardPipe implements PipeTransform {
 class PipeModule {}
 
 @Component({
-  selector: 'target-4564',
-  template: '{{ null | target }}:{{ token }}:{{ service.func() }}',
+    selector: 'target-4564',
+    template: '{{ null | target }}:{{ token }}:{{ service.func() }}',
+    standalone: false
 })
 class TargetComponent {
   constructor(
@@ -77,9 +80,9 @@ class TargetComponent {
 class ComponentModule {}
 
 @Component({
-  selector: 'sut',
-  template:
-    '<custom-component><target-4564></target-4564></custom-component>',
+    selector: 'sut',
+    template: '<custom-component><target-4564></target-4564></custom-component>',
+    standalone: false
 })
 class SubjectUnderTestComponent {}
 

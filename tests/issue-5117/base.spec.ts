@@ -11,9 +11,9 @@ import { TestBed } from '@angular/core/testing';
 import { isMockOf, MockBuilder, MockRender, ngMocks } from 'ng-mocks';
 
 @Directive({
-  selector: 'base',
-  ['standalone' as never /* TODO: remove after upgrade to a14 */]:
-    true,
+    selector: 'base',
+    ['standalone' as never /* TODO: remove after upgrade to a14 */]: true,
+    standalone: false
 })
 class BaseDirective {
   @Input() public readonly input: string | undefined = undefined;
@@ -23,10 +23,10 @@ class BaseDirective {
 }
 
 @Component({
-  selector: 'target',
-  template: '',
-  ['hostDirectives' as never /* TODO: remove after upgrade to a15 */]:
-    [BaseDirective],
+    selector: 'target',
+    template: '',
+    ['hostDirectives' as never /* TODO: remove after upgrade to a15 */]: [BaseDirective],
+    standalone: false
 })
 class TargetComponent {
   @Input() public readonly input: string | undefined = undefined;

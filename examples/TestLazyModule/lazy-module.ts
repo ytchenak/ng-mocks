@@ -2,8 +2,9 @@ import { Component, NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 @Component({
-  selector: 'lazy',
-  template: 'lazy-component',
+    selector: 'lazy',
+    template: 'lazy-component',
+    standalone: false
 })
 export class LazyComponent {}
 

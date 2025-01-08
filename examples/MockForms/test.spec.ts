@@ -13,15 +13,16 @@ import {
 } from 'ng-mocks';
 
 @Component({
-  providers: [
-    {
-      multi: true,
-      provide: NG_VALUE_ACCESSOR,
-      useExisting: forwardRef(() => CvaComponent),
-    },
-  ],
-  selector: 'cva',
-  template: 'dependency',
+    providers: [
+        {
+            multi: true,
+            provide: NG_VALUE_ACCESSOR,
+            useExisting: forwardRef(() => CvaComponent),
+        },
+    ],
+    selector: 'cva',
+    template: 'dependency',
+    standalone: false
 })
 class CvaComponent implements ControlValueAccessor {
   public registerOnChange = (fn: any): void => fn;
@@ -32,8 +33,9 @@ class CvaComponent implements ControlValueAccessor {
 }
 
 @Component({
-  selector: 'target',
-  template: ` <cva [(ngModel)]="value"></cva> `,
+    selector: 'target',
+    template: ` <cva [(ngModel)]="value"></cva> `,
+    standalone: false
 })
 class TargetComponent {
   public value: any;

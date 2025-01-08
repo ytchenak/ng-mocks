@@ -4,8 +4,8 @@ import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { MockBuilder, MockRender, ngMocks } from 'ng-mocks';
 
 @Component({
-  selector: 'target-ng-mocks-trigger-keyup',
-  template: `
+    selector: 'target-ng-mocks-trigger-keyup',
+    template: `
     <input
       [formControl]="control"
       (keyup)="keyupTag = $event"
@@ -14,6 +14,7 @@ import { MockBuilder, MockRender, ngMocks } from 'ng-mocks';
       #element
     />
   `,
+    standalone: false
 })
 class TargetComponent {
   public readonly control = new FormControl();

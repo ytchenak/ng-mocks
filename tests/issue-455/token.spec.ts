@@ -31,7 +31,10 @@ const TOKEN: InjectionToken<InjectedAbstraction> =
     providedIn: 'root',
   });
 
-@Component({ template: '' })
+@Component({
+    template: '',
+    standalone: false
+})
 class TestWithoutDecoratorComponent {
   public constructor(
     @Inject(TOKEN)
@@ -39,7 +42,10 @@ class TestWithoutDecoratorComponent {
   ) {}
 }
 
-@Component({ template: '' })
+@Component({
+    template: '',
+    standalone: false
+})
 class TestWithDecoratorComponent {
   public constructor(
     @Inject(TOKEN)

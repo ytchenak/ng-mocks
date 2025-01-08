@@ -7,9 +7,10 @@ import {
 import { MockBuilder, MockRender } from 'ng-mocks';
 
 @Component({
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  selector: 'item-list',
-  template: '{{items.length}}',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'item-list',
+    template: '{{items.length}}',
+    standalone: false
 })
 class ItemListComponent {
   @Input() public items: string[] = [];

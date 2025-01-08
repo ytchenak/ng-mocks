@@ -7,7 +7,10 @@ import {
 
 import { MockBuilder, MockRender, ngMocks } from 'ng-mocks';
 
-@Pipe({ name: 'dependency' })
+@Pipe({
+    name: 'dependency',
+    standalone: false
+})
 class DependencyPipe implements PipeTransform {
   public transform(name: string): string {
     return `hi ${name}`;
@@ -15,8 +18,9 @@ class DependencyPipe implements PipeTransform {
 }
 
 @Component({
-  selector: 'target',
-  template: '{{ "foo" | dependency }}',
+    selector: 'target',
+    template: '{{ "foo" | dependency }}',
+    standalone: false
 })
 class TargetComponent {
   public targetMockPipe() {}

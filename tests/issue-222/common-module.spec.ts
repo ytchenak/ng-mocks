@@ -5,8 +5,9 @@ import { TestBed } from '@angular/core/testing';
 import { MockModule, MockRender } from 'ng-mocks';
 
 @Component({
-  selector: 'target-222-common-module',
-  template: 'target',
+    selector: 'target-222-common-module',
+    template: 'target',
+    standalone: false
 })
 class TargetComponent {}
 

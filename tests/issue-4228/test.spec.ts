@@ -9,8 +9,9 @@ import {
 import { MockBuilder, MockRender, ngMocks } from 'ng-mocks';
 
 @Component({
-  selector: 'app-target',
-  template: `<custom-component></custom-component>name: {{ name }}`,
+    selector: 'app-target',
+    template: `<custom-component></custom-component>name: {{ name }}`,
+    standalone: false
 })
 class TargetComponent {
   @Input() public readonly name: string = '';

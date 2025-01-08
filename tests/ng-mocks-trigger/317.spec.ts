@@ -3,8 +3,9 @@ import { Component, EventEmitter, Output } from '@angular/core';
 import { MockBuilder, MockRender, ngMocks } from 'ng-mocks';
 
 @Component({
-  selector: 'target-ng-mocks-trigger-317',
-  template: '<input (focus)="trigger.emit()" data-label="input">',
+    selector: 'target-ng-mocks-trigger-317',
+    template: '<input (focus)="trigger.emit()" data-label="input">',
+    standalone: false
 })
 class TargetComponent {
   @Output() public readonly trigger = new EventEmitter<void>();

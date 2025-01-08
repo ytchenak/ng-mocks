@@ -3,8 +3,9 @@ import { Component, Input } from '@angular/core';
 import { MockBuilder, MockRenderFactory, ngMocks } from 'ng-mocks';
 
 @Component({
-  selector: 'target-mock-render-factory',
-  template: '{{ value }}',
+    selector: 'target-mock-render-factory',
+    template: '{{ value }}',
+    standalone: false
 })
 class TargetComponent {
   @Input() public value: null | number = null;

@@ -9,9 +9,9 @@ import {
 import { MockBuilder, MockRender, ngMocks } from 'ng-mocks';
 
 @Directive({
-  selector: 'host',
-  ['standalone' as never /* TODO: remove after upgrade to a14 */]:
-    true,
+    selector: 'host',
+    ['standalone' as never /* TODO: remove after upgrade to a14 */]: true,
+    standalone: false
 })
 class HostDirective {
   @HostBinding('attr.name') @Input() input?: string;
@@ -20,15 +20,15 @@ class HostDirective {
 }
 
 @Component({
-  selector: 'target',
-  ['hostDirectives' as never /* TODO: remove after upgrade to a15 */]:
-    [
-      {
-        directive: HostDirective,
-        inputs: ['input'],
-      },
+    selector: 'target',
+    ['hostDirectives' as never /* TODO: remove after upgrade to a15 */]: [
+        {
+            directive: HostDirective,
+            inputs: ['input'],
+        },
     ],
-  template: 'target',
+    template: 'target',
+    standalone: false
 })
 class TargetComponent {
   public targetTestHostDirective() {}

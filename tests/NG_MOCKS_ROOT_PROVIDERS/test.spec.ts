@@ -24,8 +24,9 @@ class Target1Service {
 }
 
 @Component({
-  selector: 'target-1',
-  template: '{{ service.name }}',
+    selector: 'target-1',
+    template: '{{ service.name }}',
+    standalone: false
 })
 class Target1Component {
   public constructor(public readonly service: Target1Service) {}
@@ -50,8 +51,9 @@ class Target2Service {
 }
 
 @Component({
-  selector: 'target-2',
-  template: '{{ service.name }}',
+    selector: 'target-2',
+    template: '{{ service.name }}',
+    standalone: false
 })
 class Target2Component {
   public constructor(public readonly service: Target2Service) {}

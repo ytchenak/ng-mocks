@@ -19,9 +19,9 @@ class StandaloneService {}
 class StandaloneModule {}
 
 @Pipe({
-  name: 'standalone',
-  ['standalone' as never /* TODO: remove after upgrade to a14 */]:
-    true,
+    name: 'standalone',
+    ['standalone' as never /* TODO: remove after upgrade to a14 */]: true,
+    standalone: false
 })
 class StandalonePipe implements PipeTransform {
   transform(): string {
@@ -30,54 +30,58 @@ class StandalonePipe implements PipeTransform {
 }
 
 @Component({
-  selector: 'standalone',
-  template: 'service:{{ service.constructor.name }}',
-  ['standalone' as never /* TODO: remove after upgrade to a14 */]:
-    true,
-  ['imports' as never /* TODO: remove after upgrade to a14 */]: [
-    StandaloneModule,
-    StandalonePipe,
-  ],
+    selector: 'standalone',
+    template: 'service:{{ service.constructor.name }}',
+    ['standalone' as never /* TODO: remove after upgrade to a14 */]: true,
+    ['imports' as never /* TODO: remove after upgrade to a14 */]: [
+        StandaloneModule,
+        StandalonePipe,
+    ],
+    standalone: false
 })
 class StandaloneComponent {
   constructor(public readonly service: StandaloneService) {}
 }
 
 @Component({
-  selector: 'target-2687-legacy',
-  template: '<standalone></standalone> pipe:{{ null | standalone }}',
-  ['standalone' as never /* TODO: remove after upgrade to a14 */]:
-    true,
-  ['imports' as never /* TODO: remove after upgrade to a14 */]: [
-    StandaloneComponent,
-    StandalonePipe,
-  ],
+    selector: 'target-2687-legacy',
+    template: '<standalone></standalone> pipe:{{ null | standalone }}',
+    ['standalone' as never /* TODO: remove after upgrade to a14 */]: true,
+    ['imports' as never /* TODO: remove after upgrade to a14 */]: [
+        StandaloneComponent,
+        StandalonePipe,
+    ],
+    standalone: false
 })
 class TargetComponent {}
 
 @Component({
-  selector: 'render-standalone-component',
-  template: '<standalone></standalone>',
+    selector: 'render-standalone-component',
+    template: '<standalone></standalone>',
+    standalone: false
 })
 class RenderStandaloneComponentComponent {}
 
 @Component({
-  selector: 'render-standalone-pipe',
-  template: '{{ null | standalone }}',
+    selector: 'render-standalone-pipe',
+    template: '{{ null | standalone }}',
+    standalone: false
 })
 class RenderStandalonePipeComponent {}
 
 @Component({
-  selector: 'render-standalone-service',
-  template: '',
+    selector: 'render-standalone-service',
+    template: '',
+    standalone: false
 })
 class RenderStandaloneServiceComponent {
   constructor(public readonly service: StandaloneService) {}
 }
 
 @Component({
-  selector: 'render-target-component',
-  template: '<target-2687-legacy></target-2687-legacy>',
+    selector: 'render-target-component',
+    template: '<target-2687-legacy></target-2687-legacy>',
+    standalone: false
 })
 class RenderTargetComponentComponent {}
 

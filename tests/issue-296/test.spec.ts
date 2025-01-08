@@ -19,14 +19,16 @@ class ModalService {
 }
 
 @Component({
-  selector: 'modal',
-  template: 'modal',
+    selector: 'modal',
+    template: 'modal',
+    standalone: false
 })
 class ModalComponent {}
 
 @Component({
-  selector: 'target-296',
-  template: 'target',
+    selector: 'target-296',
+    template: 'target',
+    standalone: false
 })
 class TargetComponent {
   public constructor(modalService: ModalService) {

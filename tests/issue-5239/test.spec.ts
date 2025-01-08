@@ -15,9 +15,9 @@ import {
 
 // A simple standalone pipe we are going to mock.
 @Pipe({
-  name: 'pipe',
-  ['standalone' as never /* TODO: remove after upgrade to a14 */]:
-    true,
+    name: 'pipe',
+    ['standalone' as never /* TODO: remove after upgrade to a14 */]: true,
+    standalone: false
 })
 class StandalonePipe implements PipeTransform {
   transform(value: string | null): string {
@@ -29,13 +29,13 @@ class StandalonePipe implements PipeTransform {
 
 // A simple dependency component we are going to mock that imports the standalone pipe.
 @Component({
-  selector: 'dependency',
-  template: 'dependency',
-  ['standalone' as never /* TODO: remove after upgrade to a14 */]:
-    true,
-  ['imports' as never /* TODO: remove after upgrade to a14 */]: [
-    StandalonePipe,
-  ],
+    selector: 'dependency',
+    template: 'dependency',
+    ['standalone' as never /* TODO: remove after upgrade to a14 */]: true,
+    ['imports' as never /* TODO: remove after upgrade to a14 */]: [
+        StandalonePipe,
+    ],
+    standalone: false
 })
 class DependencyComponent {
   public dependency5239() {}
@@ -43,14 +43,14 @@ class DependencyComponent {
 
 // A standalone component we are going to test.
 @Component({
-  selector: 'standalone',
-  template: `<dependency></dependency> {{ 'test' | pipe }}`,
-  ['standalone' as never /* TODO: remove after upgrade to a14 */]:
-    true,
-  ['imports' as never /* TODO: remove after upgrade to a14 */]: [
-    DependencyComponent,
-    StandalonePipe,
-  ],
+    selector: 'standalone',
+    template: `<dependency></dependency> {{ 'test' | pipe }}`,
+    ['standalone' as never /* TODO: remove after upgrade to a14 */]: true,
+    ['imports' as never /* TODO: remove after upgrade to a14 */]: [
+        DependencyComponent,
+        StandalonePipe,
+    ],
+    standalone: false
 })
 class StandaloneComponent {
   public standalone5239() {}

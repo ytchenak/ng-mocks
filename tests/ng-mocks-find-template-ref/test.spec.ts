@@ -10,7 +10,8 @@ import {
 import { MockBuilder, MockRender, ngMocks } from 'ng-mocks';
 
 @Directive({
-  selector: '[target]',
+    selector: '[target]',
+    standalone: false
 })
 class TargetDirective {
   @Input() public readonly target: string | null = null;
@@ -19,21 +20,23 @@ class TargetDirective {
 }
 
 @Directive({
-  selector: '[unused]',
+    selector: '[unused]',
+    standalone: false
 })
 class UnusedDirective {
   public constructor(public readonly tpl: TemplateRef<any>) {}
 }
 
 @Component({
-  selector: 'target-ng-mocks-find-template-of',
-  template: '',
+    selector: 'target-ng-mocks-find-template-of',
+    template: '',
+    standalone: false
 })
 class TargetComponent {}
 
 @Component({
-  selector: 'test',
-  template: `
+    selector: 'test',
+    template: `
     <target-ng-mocks-find-template-of>
       1
       <ng-template #id1>id1</ng-template>
@@ -54,6 +57,7 @@ class TargetComponent {}
       9
     </target-ng-mocks-find-template-of>
   `,
+    standalone: false
 })
 class TestComponent {}
 

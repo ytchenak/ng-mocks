@@ -11,21 +11,21 @@ import { MockBuilder, MockRender, ngMocks } from 'ng-mocks';
 
 // A standalone CVA component
 @Component({
-  selector: 'standalone-cva',
-  template: `<input
+    selector: 'standalone-cva',
+    template: `<input
     type="text"
     [value]="value"
     change="onValueChange($event.target.value)"
   />`,
-  ['standalone' as never /* TODO: remove after upgrade to a14 */]:
-    true,
-  providers: [
-    {
-      provide: NG_VALUE_ACCESSOR,
-      useExisting: forwardRef(() => StandaloneCVAComponent),
-      multi: true,
-    },
-  ],
+    ['standalone' as never /* TODO: remove after upgrade to a14 */]: true,
+    providers: [
+        {
+            provide: NG_VALUE_ACCESSOR,
+            useExisting: forwardRef(() => StandaloneCVAComponent),
+            multi: true,
+        },
+    ],
+    standalone: false
 })
 class StandaloneCVAComponent implements ControlValueAccessor {
   public value = '';

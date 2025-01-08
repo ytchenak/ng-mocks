@@ -12,47 +12,56 @@ import {
 } from '@angular/core';
 
 @Directive({
-  selector: 'base1',
+    selector: 'base1',
+    standalone: false
 })
 export class Base1Directive {}
 
 @Directive({
-  selector: 'base2',
+    selector: 'base2',
+    standalone: false
 })
 export class Base2Directive {}
 
 @Directive({
-  selector: 'base3',
+    selector: 'base3',
+    standalone: false
 })
 export class Base3Directive {}
 
 @Directive({
-  selector: 'override1',
+    selector: 'override1',
+    standalone: false
 })
 export class Override1Directive {}
 
 @Directive({
-  selector: 'override2',
+    selector: 'override2',
+    standalone: false
 })
 export class Override2Directive {}
 
 @Directive({
-  selector: 'override3',
+    selector: 'override3',
+    standalone: false
 })
 export class Override3Directive {}
 
 @Directive({
-  selector: 'div',
+    selector: 'div',
+    standalone: false
 })
 export class DivDirective {
   @Input() public prop: number | null = null;
 }
 
 @Directive({
-  selector: 'base1',
+    selector: 'base1',
+    standalone: false
 })
 @Directive({
-  selector: 'base2',
+    selector: 'base2',
+    standalone: false
 })
 export class BaseDirective {
   @ContentChild(DivDirective, {} as never) public contentChildBase?: DivDirective;
@@ -79,12 +88,14 @@ export class BaseDirective {
 }
 
 @Component({
-  selector: 'override1',
-  template: 'override1<ng-content></ng-content>',
+    selector: 'override1',
+    template: 'override1<ng-content></ng-content>',
+    standalone: false
 })
 @Component({
-  selector: 'override2',
-  template: 'override2<ng-content></ng-content>',
+    selector: 'override2',
+    template: 'override2<ng-content></ng-content>',
+    standalone: false
 })
 export class OverrideComponent extends BaseDirective {
   @ContentChild(DivDirective, {} as never) public contentChildOverride?: DivDirective;

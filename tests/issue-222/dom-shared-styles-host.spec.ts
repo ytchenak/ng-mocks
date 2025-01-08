@@ -16,34 +16,29 @@ import {
 import { MockBuilder, MockRender, ngMocks } from 'ng-mocks';
 
 @Component({
-  animations: [
-    trigger('openClose', [
-      state(
-        'open',
-        style({
-          backgroundColor: 'yellow',
-          height: '200px',
-          opacity: 1,
-        }),
-      ),
-      state(
-        'closed',
-        style({
-          backgroundColor: 'green',
-          height: '100px',
-          opacity: 0.5,
-        }),
-      ),
-      transition('open => closed', [animate('1s')]),
-      transition('closed => open', [animate('0.5s')]),
-    ]),
-  ],
-  selector: 'target-222-dom-shared-styles-host',
-  template: `
+    animations: [
+        trigger('openClose', [
+            state('open', style({
+                backgroundColor: 'yellow',
+                height: '200px',
+                opacity: 1,
+            })),
+            state('closed', style({
+                backgroundColor: 'green',
+                height: '100px',
+                opacity: 0.5,
+            })),
+            transition('open => closed', [animate('1s')]),
+            transition('closed => open', [animate('0.5s')]),
+        ]),
+    ],
+    selector: 'target-222-dom-shared-styles-host',
+    template: `
     <div [@openClose]="isOpen ? 'open' : 'closed'">
       The box is now {{ isOpen ? 'Open' : 'Closed' }}!
     </div>
   `,
+    standalone: false
 })
 class TargetComponent {
   public isOpen = true;

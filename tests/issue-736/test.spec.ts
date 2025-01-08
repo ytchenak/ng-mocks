@@ -12,14 +12,16 @@ import {
 } from 'ng-mocks';
 
 @Component({
-  selector: 'modal',
-  template: 'modal',
+    selector: 'modal',
+    template: 'modal',
+    standalone: false
 })
 class ModalComponent {}
 
 @Component({
-  selector: 'target-736',
-  template: 'target',
+    selector: 'target-736',
+    template: 'target',
+    standalone: false
 })
 class TargetComponent implements OnInit {
   public constructor(

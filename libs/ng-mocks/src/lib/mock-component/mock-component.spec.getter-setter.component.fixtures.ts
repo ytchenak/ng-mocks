@@ -1,8 +1,9 @@
 import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'getter-setter',
-  template: '',
+    selector: 'getter-setter',
+    template: '',
+    standalone: false
 })
 export class GetterSetterComponent {
   @Input()

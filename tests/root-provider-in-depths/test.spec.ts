@@ -29,8 +29,9 @@ class TargetService {
 }
 
 @Component({
-  selector: 'target-root-provider-in-depths',
-  template: '{{ service.name }}',
+    selector: 'target-root-provider-in-depths',
+    template: '{{ service.name }}',
+    standalone: false
 })
 class TargetComponent {
   public constructor(public readonly service: TargetService) {}

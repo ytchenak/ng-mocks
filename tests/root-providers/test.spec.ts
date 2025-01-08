@@ -66,12 +66,13 @@ class ProvidedService {
 }
 
 @Component({
-  selector: 'target-root-providers',
-  template: `
+    selector: 'target-root-providers',
+    template: `
     "service:{{ service.name }}" "fake:{{ fake.name }}" "injected:{{
       injected.name
     }}" "provided:{{ provided.name }}" "token:{{ token }}"
   `,
+    standalone: false
 })
 class TargetComponent {
   public readonly injected: TargetService;
@@ -95,8 +96,9 @@ class TargetComponent {
 }
 
 @Component({
-  selector: 'module',
-  template: '{{ moduleService.name }}',
+    selector: 'module',
+    template: '{{ moduleService.name }}',
+    standalone: false
 })
 class ModuleComponent {
   public constructor(public readonly moduleService: ModuleService) {}

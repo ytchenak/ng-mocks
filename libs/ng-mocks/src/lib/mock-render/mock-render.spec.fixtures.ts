@@ -2,8 +2,9 @@ import { DOCUMENT } from '@angular/common';
 import { Component, EventEmitter, Inject, Input, Output } from '@angular/core';
 
 @Component({
-  selector: 'render-real-component',
-  template: '<span (click)="trigger.emit($event)">{{ content }}</span>',
+    selector: 'render-real-component',
+    template: '<span (click)="trigger.emit($event)">{{ content }}</span>',
+    standalone: false
 })
 export class RenderRealComponent {
   @Output() public trigger = new EventEmitter();
@@ -29,12 +30,14 @@ export class RenderRealComponent {
 }
 
 @Component({
-  template: 'WithoutSelectorComponent',
+    template: 'WithoutSelectorComponent',
+    standalone: false
 })
 export class WithoutSelectorComponent {}
 
 @Component({
-  selector: 'empty',
-  template: 'empty',
+    selector: 'empty',
+    template: 'empty',
+    standalone: false
 })
 export class EmptyComponent {}

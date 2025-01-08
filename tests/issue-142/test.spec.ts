@@ -31,8 +31,9 @@ class TargetModule {
 }
 
 @Component({
-  selector: 'target-142',
-  template: 'target',
+    selector: 'target-142',
+    template: 'target',
+    standalone: false
 })
 class TargetComponent {}
 

@@ -12,9 +12,10 @@ class Provider1Service {}
 class Provider2Service {}
 
 @Component({
-  selector: 'target-4613-providers',
-  template: '{{ service.constructor.name }}',
-  providers: [Provider2Service],
+    selector: 'target-4613-providers',
+    template: '{{ service.constructor.name }}',
+    providers: [Provider2Service],
+    standalone: false
 })
 class TargetComponent {
   constructor(public readonly service: ProviderService) {}

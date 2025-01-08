@@ -9,8 +9,9 @@ import {
 import { MockBuilder, MockRender, ngMocks } from 'ng-mocks';
 
 @Component({
-  selector: 'cva-ng-mocks-touch-cdr-blur',
-  template: ' {{ show }} ',
+    selector: 'cva-ng-mocks-touch-cdr-blur',
+    template: ' {{ show }} ',
+    standalone: false
 })
 class CvaComponent implements ControlValueAccessor {
   public onChange: any = () => undefined;
@@ -34,8 +35,8 @@ class CvaComponent implements ControlValueAccessor {
 }
 
 @Component({
-  selector: 'target-ng-mocks-touch-cdr-blur',
-  template: `
+    selector: 'target-ng-mocks-touch-cdr-blur',
+    template: `
     <cva-ng-mocks-touch-cdr-blur
       [formControl]="control"
       class="form-control"
@@ -47,6 +48,7 @@ class CvaComponent implements ControlValueAccessor {
       ngDefaultControl
     ></cva-ng-mocks-touch-cdr-blur>
   `,
+    standalone: false
 })
 class TargetComponent {
   public control = new FormControl();

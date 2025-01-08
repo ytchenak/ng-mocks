@@ -13,7 +13,8 @@ import {
 import { MockBuilder, MockRender, ngMocks } from 'ng-mocks';
 
 @Directive({
-  selector: '[tpl]',
+    selector: '[tpl]',
+    standalone: false
 })
 class MockDirective {
   @Input('tpl') public readonly name: string | null = null;
@@ -22,8 +23,9 @@ class MockDirective {
 }
 
 @Component({
-  selector: 'mock-ng-mocks-render-idea',
-  template: ' <ng-content></ng-content> ',
+    selector: 'mock-ng-mocks-render-idea',
+    template: ' <ng-content></ng-content> ',
+    standalone: false
 })
 class MockComponent {
   @ContentChildren(MockDirective)
@@ -46,8 +48,8 @@ class MockComponent {
 }
 
 @Component({
-  selector: 'target-ng-mocks-render-idea',
-  template: `
+    selector: 'target-ng-mocks-render-idea',
+    template: `
     <mock-ng-mocks-render-idea>
       :step:1:
       <ng-template #header>rendered-header</ng-template>
@@ -58,6 +60,7 @@ class MockComponent {
       :step:4:
     </mock-ng-mocks-render-idea>
   `,
+    standalone: false
 })
 class TargetComponent {}
 

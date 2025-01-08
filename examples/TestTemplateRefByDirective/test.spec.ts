@@ -12,7 +12,8 @@ import {
 import { MockBuilder, MockRender, ngMocks } from 'ng-mocks';
 
 @Directive({
-  selector: '[xdTpl]',
+    selector: '[xdTpl]',
+    standalone: false
 })
 class XdTplDirective {
   @Input() public readonly xdTpl: 'header' | 'footer' | null = null;
@@ -21,8 +22,9 @@ class XdTplDirective {
 }
 
 @Component({
-  selector: 'xd-card-template-ref-by-directive',
-  template: 'xd-card',
+    selector: 'xd-card-template-ref-by-directive',
+    template: 'xd-card',
+    standalone: false
 })
 class XdCardComponent {
   @ContentChildren(XdTplDirective, {} as never)
@@ -30,13 +32,14 @@ class XdCardComponent {
 }
 
 @Component({
-  selector: 'target-template-ref-by-directive',
-  template: `
+    selector: 'target-template-ref-by-directive',
+    template: `
     <xd-card-template-ref-by-directive>
       <ng-template xdTpl="header">My Header</ng-template>
       <ng-template xdTpl="footer">My Footer</ng-template>
     </xd-card-template-ref-by-directive>
   `,
+    standalone: false
 })
 class TargetComponent {}
 

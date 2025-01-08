@@ -15,24 +15,25 @@ import {
 } from 'ng-mocks';
 
 @Component({
-  selector: 'target-cva-form-control',
-  template:
-    '<control-cva-form-control [formControl]="control"></control-cva-form-control>',
+    selector: 'target-cva-form-control',
+    template: '<control-cva-form-control [formControl]="control"></control-cva-form-control>',
+    standalone: false
 })
 class TargetComponent {
   public readonly control = new FormControl();
 }
 
 @Component({
-  providers: [
-    {
-      multi: true,
-      provide: NG_VALUE_ACCESSOR,
-      useExisting: forwardRef(() => ControlComponent),
-    },
-  ],
-  selector: 'control-cva-form-control',
-  template: '',
+    providers: [
+        {
+            multi: true,
+            provide: NG_VALUE_ACCESSOR,
+            useExisting: forwardRef(() => ControlComponent),
+        },
+    ],
+    selector: 'control-cva-form-control',
+    template: '',
+    standalone: false
 })
 class ControlComponent implements ControlValueAccessor {
   public isDisabled = false;

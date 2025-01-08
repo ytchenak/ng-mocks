@@ -9,8 +9,9 @@ import {
 import { MockBuilder, MockRender, ngMocks } from 'ng-mocks';
 
 @Component({
-  selector: 'xd-card-template-ref-by-id',
-  template: 'xd-card',
+    selector: 'xd-card-template-ref-by-id',
+    template: 'xd-card',
+    standalone: false
 })
 class XdCardComponent {
   @ContentChild('footer', {} as never)
@@ -21,13 +22,14 @@ class XdCardComponent {
 }
 
 @Component({
-  selector: 'target-template-ref-by-id',
-  template: `
+    selector: 'target-template-ref-by-id',
+    template: `
     <xd-card-template-ref-by-id>
       <ng-template #header>My Header</ng-template>
       <ng-template #footer>My Footer</ng-template>
     </xd-card-template-ref-by-id>
   `,
+    standalone: false
 })
 class TargetComponent {}
 

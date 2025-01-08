@@ -16,7 +16,8 @@ import { RouterModule } from '@angular/router';
 import { MockBuilder, MockRender, ngMocks } from 'ng-mocks';
 
 @Pipe({
-  name: 'translate',
+    name: 'translate',
+    standalone: false
 })
 class TranslatePipe implements PipeTransform {
   public transform(value: string): string {
@@ -28,8 +29,8 @@ class TranslatePipe implements PipeTransform {
 
 // Our main component that we want to test.
 @Component({
-  selector: 'app-root',
-  template: `
+    selector: 'app-root',
+    template: `
     <app-header
       [showLogo]="true"
       [title]="title"
@@ -48,6 +49,7 @@ class TranslatePipe implements PipeTransform {
     </app-header>
     <router-outlet></router-outlet>
   `,
+    standalone: false
 })
 class AppComponent {
   @Output() public logoClick = new EventEmitter<void>();
@@ -59,14 +61,15 @@ class AppComponent {
 // A dependency component out of which we want to create a mock
 // component with a respect of its inputs, outputs and ContentChild.
 @Component({
-  selector: 'app-header',
-  template: `
+    selector: 'app-header',
+    template: `
     <a (click)="logo.emit()">
       <img src="assets/logo.png" *ngIf="showLogo" />
     </a>
     {{ title }}
     <template [ngTemplateOutlet]="menu"></template>
   `,
+    standalone: false
 })
 class AppHeaderComponent {
   @Output() public readonly logo = new EventEmitter<void>();

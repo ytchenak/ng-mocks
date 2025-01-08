@@ -1,7 +1,8 @@
 import { Component, NgModule, Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'target',
+    name: 'target',
+    standalone: false
 })
 export class TargetPipe implements PipeTransform {
   public transform(value: string): string {
@@ -22,8 +23,9 @@ export class PipeModule {}
 export class TargetModule {}
 
 @Component({
-  selector: 'target-241',
-  template: "{{ 'target' | target }}",
+    selector: 'target-241',
+    template: "{{ 'target' | target }}",
+    standalone: false
 })
 export class TargetComponent {}
 

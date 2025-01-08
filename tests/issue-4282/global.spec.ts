@@ -22,8 +22,9 @@ class TargetService {
 }
 
 @Component({
-  selector: 'target-4282-global',
-  template: `{{ service.name }}`,
+    selector: 'target-4282-global',
+    template: `{{ service.name }}`,
+    standalone: false
 })
 class TargetComponent {
   readonly service = inject(TargetService);

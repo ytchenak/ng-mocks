@@ -10,13 +10,15 @@ import {
 import { isMockOf, MockBuilder, MockRender, ngMocks } from 'ng-mocks';
 
 @Directive({
-  selector: '[target]',
+    selector: '[target]',
+    standalone: false
 })
 class TargetDirective {}
 
 @Component({
-  selector: 'target-mock-component-render-reduced',
-  template: 'target',
+    selector: 'target-mock-component-render-reduced',
+    template: 'target',
+    standalone: false
 })
 class TargetComponent {
   @ContentChildren(TargetDirective, {

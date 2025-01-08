@@ -3,7 +3,8 @@ import { Directive, TemplateRef } from '@angular/core';
 import { MockBuilder, MockRender, ngMocks } from 'ng-mocks';
 
 @Directive({
-  selector: '[tpl]',
+    selector: '[tpl]',
+    standalone: false
 })
 class TplDirective {
   public constructor(public readonly tpl: TemplateRef<any>) {}

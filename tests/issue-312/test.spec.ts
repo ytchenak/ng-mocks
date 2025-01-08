@@ -55,8 +55,9 @@ class ModuleService {
 }
 
 @Component({
-  selector: 'target-312',
-  template: 'target',
+    selector: 'target-312',
+    template: 'target',
+    standalone: false
 })
 class TargetComponent {
   public constructor(

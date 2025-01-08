@@ -3,8 +3,9 @@ import { Component, OnInit } from '@angular/core';
 import { MockBuilder, MockRender, ngMocks } from 'ng-mocks';
 
 @Component({
-  selector: 'target-ng-mocks-render-cdr',
-  template: '{{ value }}',
+    selector: 'target-ng-mocks-render-cdr',
+    template: '{{ value }}',
+    standalone: false
 })
 class TargetComponent implements OnInit {
   public value = '';

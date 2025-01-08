@@ -18,7 +18,8 @@ import {
 class TargetClass {}
 
 @Pipe({
-  name: 'target',
+    name: 'target',
+    standalone: false
 })
 class TargetPipe implements PipeTransform {
   public transform(value: number): string {
@@ -27,13 +28,15 @@ class TargetPipe implements PipeTransform {
 }
 
 @Directive({
-  selector: 'target-1168',
+    selector: 'target-1168',
+    standalone: false
 })
 class TargetDirective {}
 
 @Component({
-  selector: 'target-1168',
-  template: 'target',
+    selector: 'target-1168',
+    template: 'target',
+    standalone: false
 })
 class TargetComponent {}
 

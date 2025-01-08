@@ -9,8 +9,9 @@ import {
 } from 'ng-mocks';
 
 @Component({
-  selector: 'target-mock-instance-member-reset',
-  template: '',
+    selector: 'target-mock-instance-member-reset',
+    template: '',
+    standalone: false
 })
 class TargetComponent {
   public global = '';

@@ -5,14 +5,15 @@ import { MockBuilder, MockRender, ngMocks } from 'ng-mocks';
 const TOKEN = new InjectionToken('TOKEN');
 
 @Component({
-  providers: [
-    {
-      provide: TOKEN,
-      useExisting: TargetComponent,
-    },
-  ],
-  selector: 'target-ng-mocks-find-instance-token',
-  template: 'target',
+    providers: [
+        {
+            provide: TOKEN,
+            useExisting: TargetComponent,
+        },
+    ],
+    selector: 'target-ng-mocks-find-instance-token',
+    template: 'target',
+    standalone: false
 })
 class TargetComponent {}
 

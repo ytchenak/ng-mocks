@@ -15,18 +15,21 @@ import {
 } from 'ng-mocks';
 
 @Component({
-  selector: 'target-mock-of-mock',
-  template: '',
+    selector: 'target-mock-of-mock',
+    template: '',
+    standalone: false
 })
 class TargetComponent {}
 
 @Directive({
-  selector: 'target-mock-of-mock',
+    selector: 'target-mock-of-mock',
+    standalone: false
 })
 class TargetDirective {}
 
 @Pipe({
-  name: 'target',
+    name: 'target',
+    standalone: false
 })
 class TargetPipe implements PipeTransform {
   public transform(value: any): any {

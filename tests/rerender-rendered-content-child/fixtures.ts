@@ -2,8 +2,9 @@ import { CommonModule } from '@angular/common';
 import { Component, ContentChild, NgModule, TemplateRef } from '@angular/core';
 
 @Component({
-  selector: 'ccc',
-  template: '<ng-template ngFor [ngForOf]="[]" [ngForTemplate]="injectedBlock"></ng-template>',
+    selector: 'ccc',
+    template: '<ng-template ngFor [ngForOf]="[]" [ngForTemplate]="injectedBlock"></ng-template>',
+    standalone: false
 })
 export class ContentChildComponent {
   @ContentChild('block', {} as never) public injectedBlock?: TemplateRef<any>;

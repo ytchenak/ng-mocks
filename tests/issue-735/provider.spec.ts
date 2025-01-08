@@ -4,8 +4,9 @@ import { TestBed } from '@angular/core/testing';
 import { MockBuilder, MockRender, ngMocks } from 'ng-mocks';
 
 @Component({
-  selector: 'target-735-provider',
-  template: '{{ service }}',
+    selector: 'target-735-provider',
+    template: '{{ service }}',
+    standalone: false
 })
 class TargetComponent {
   public constructor(public readonly service: Testability) {}

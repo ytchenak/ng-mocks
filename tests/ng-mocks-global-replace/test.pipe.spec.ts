@@ -10,7 +10,8 @@ import {
 } from 'ng-mocks';
 
 @Pipe({
-  name: 'target',
+    name: 'target',
+    standalone: false
 })
 class TargetPipe implements PipeTransform {
   public transform(): string {
@@ -19,7 +20,8 @@ class TargetPipe implements PipeTransform {
 }
 
 @Pipe({
-  name: 'target',
+    name: 'target',
+    standalone: false
 })
 class FakePipe implements PipeTransform {
   public transform(): string {

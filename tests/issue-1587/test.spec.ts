@@ -11,7 +11,8 @@ import { MockBuilder, MockRender, ngMocks } from 'ng-mocks';
 
 @Injectable()
 @Pipe({
-  name: 'target',
+    name: 'target',
+    standalone: false
 })
 class TargetPipe extends DatePipe implements PipeTransform {}
 
@@ -23,8 +24,9 @@ class TargetPipe extends DatePipe implements PipeTransform {}
 class TargetModule {}
 
 @Component({
-  selector: 'target-1587',
-  template: "{{ '2022-01-17' | target }}",
+    selector: 'target-1587',
+    template: "{{ '2022-01-17' | target }}",
+    standalone: false
 })
 class TargetComponent {}
 

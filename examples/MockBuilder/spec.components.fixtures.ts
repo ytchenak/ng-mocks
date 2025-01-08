@@ -15,12 +15,13 @@ import {
 import { TOKEN_CUSTOMIZE, TOKEN_KEEP, TOKEN_MOCK } from './spec.tokens.fixtures';
 
 @Component({
-  selector: 'c-structural',
-  template: `
+    selector: 'c-structural',
+    template: `
     <div *ngIf="items && items.length">
       <ng-template ngFor [ngForOf]="items" [ngForTemplate]="injectedBlock"></ng-template>
     </div>
   `,
+    standalone: false
 })
 export class ContentChildComponent<T> {
   @ContentChild('block', {} as never) public readonly injectedBlock: TemplateRef<any> | undefined;
@@ -28,8 +29,8 @@ export class ContentChildComponent<T> {
 }
 
 @Component({
-  selector: 'c-my',
-  template: `
+    selector: 'c-my',
+    template: `
     <div>My Content</div>
 
     <div>MyComponent1: <c-1></c-1></div>
@@ -75,6 +76,7 @@ export class ContentChildComponent<T> {
       </ng-template>
     </c-structural>
   `,
+    standalone: false
 })
 export class MyComponent {
   public constructor(
@@ -95,31 +97,36 @@ export class MyComponent {
 }
 
 @Component({
-  selector: 'c-1',
-  template: 'MyComponent1',
+    selector: 'c-1',
+    template: 'MyComponent1',
+    standalone: false
 })
 export class My1Component {}
 
 @Component({
-  selector: 'c-2',
-  template: 'MyComponent2',
+    selector: 'c-2',
+    template: 'MyComponent2',
+    standalone: false
 })
 export class My2Component {}
 
 @Component({
-  selector: 'c-3',
-  template: 'MyComponent3',
+    selector: 'c-3',
+    template: 'MyComponent3',
+    standalone: false
 })
 export class My3Component {}
 
 @Component({
-  selector: 'c-keep',
-  template: 'KeepComponent',
+    selector: 'c-keep',
+    template: 'KeepComponent',
+    standalone: false
 })
 export class KeepComponent {}
 
 @Component({
-  selector: 'c-mock',
-  template: 'MockComponent',
+    selector: 'c-mock',
+    template: 'MockComponent',
+    standalone: false
 })
 export class MockComponent {}

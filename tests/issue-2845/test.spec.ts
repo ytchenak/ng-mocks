@@ -6,8 +6,9 @@ import { MockBuilder, MockRender, ngMocks } from 'ng-mocks';
 class UndecoratedService {}
 
 @Component({
-  selector: 'target-2845',
-  template: `{{ service ? 'provided' : 'missing' }}`,
+    selector: 'target-2845',
+    template: `{{ service ? 'provided' : 'missing' }}`,
+    standalone: false
 })
 class TargetComponent {
   constructor(

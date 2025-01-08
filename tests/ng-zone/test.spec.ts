@@ -14,9 +14,10 @@ import {
 } from 'ng-mocks';
 
 @Component({
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  selector: 'target-ng-zone',
-  template: '{{ v }}',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'target-ng-zone',
+    template: '{{ v }}',
+    standalone: false
 })
 class TargetComponent {
   public v = 0;

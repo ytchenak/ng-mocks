@@ -21,14 +21,15 @@ try {
 }
 
 @Component({
-  selector: 'target-ng-mocks-trigger-blur',
-  template: `
+    selector: 'target-ng-mocks-trigger-blur',
+    template: `
     <input
       [formControl]="control"
       (blur)="blurTag = $event"
       #element
     />
   `,
+    standalone: false
 })
 class TargetComponent implements OnDestroy {
   public blurFromEvent: any;

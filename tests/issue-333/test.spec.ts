@@ -5,9 +5,9 @@ import { TestBed } from '@angular/core/testing';
 import { isMockOf, MockBuilder, MockRender, ngMocks } from 'ng-mocks';
 
 @Component({
-  selector: 'dynamic-overlay',
-  template:
-    '<ng-container *ngComponentOutlet="component"></ng-container>',
+    selector: 'dynamic-overlay',
+    template: '<ng-container *ngComponentOutlet="component"></ng-container>',
+    standalone: false
 })
 class DynamicOverlayComponent {
   public component?: Type<any>;
@@ -25,14 +25,16 @@ class DynamicOverlayComponent {
 class OverlayModule {}
 
 @Component({
-  selector: 'dep-component',
-  template: 'Dependency',
+    selector: 'dep-component',
+    template: 'Dependency',
+    standalone: false
 })
 class DepComponent {}
 
 @Component({
-  selector: 'mock-component',
-  template: '<h1 *ngIf="flag"><dep-component></dep-component></h1>',
+    selector: 'mock-component',
+    template: '<h1 *ngIf="flag"><dep-component></dep-component></h1>',
+    standalone: false
 })
 class MockComponent {
   public flag = true;

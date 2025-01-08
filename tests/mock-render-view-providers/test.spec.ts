@@ -8,8 +8,9 @@ class TargetService {
 }
 
 @Component({
-  selector: 'target-mock-render-view-providers',
-  template: '{{ service.name }}',
+    selector: 'target-mock-render-view-providers',
+    template: '{{ service.name }}',
+    standalone: false
 })
 class TargetComponent {
   public constructor(public readonly service: TargetService) {}

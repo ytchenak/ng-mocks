@@ -20,23 +20,24 @@ import {
 import { MockBuilder, MockRender, ngMocks } from 'ng-mocks';
 
 @Component({
-  animations: [
-    trigger('state', [
-      transition('void => *', [
-        style({
-          backgroundColor: '#000',
-          color: '#fff',
-          height: 0,
-        }),
-        animate(10 * 1000, style({ height: 100 })),
-      ]),
-    ]),
-  ],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  selector: 'target-641',
-  template: `<div @state (@state.done)="show = true">
+    animations: [
+        trigger('state', [
+            transition('void => *', [
+                style({
+                    backgroundColor: '#000',
+                    color: '#fff',
+                    height: 0,
+                }),
+                animate(10 * 1000, style({ height: 100 })),
+            ]),
+        ]),
+    ],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'target-641',
+    template: `<div @state (@state.done)="show = true">
     <span *ngIf="show">target</span>
   </div>`,
+    standalone: false
 })
 class TargetComponent {
   public show = false;

@@ -25,14 +25,15 @@ import {
 } from './mock-control-value-accessor-proxy';
 
 @Component({
-  providers: [
-    {
-      provide: NG_VALIDATORS,
-      useClass: forwardRef(() => TargetComponent),
-    },
-  ],
-  selector: 'target',
-  template: '',
+    providers: [
+        {
+            provide: NG_VALIDATORS,
+            useClass: forwardRef(() => TargetComponent),
+        },
+    ],
+    selector: 'target',
+    template: '',
+    standalone: false
 })
 class TargetComponent implements Validator {
   public validate(control: AbstractControl): ValidationErrors | null {
@@ -41,13 +42,14 @@ class TargetComponent implements Validator {
 }
 
 @Directive({
-  providers: [
-    {
-      provide: NG_ASYNC_VALIDATORS,
-      useClass: forwardRef(() => TargetDirective),
-    },
-  ],
-  selector: '[target]',
+    providers: [
+        {
+            provide: NG_ASYNC_VALIDATORS,
+            useClass: forwardRef(() => TargetDirective),
+        },
+    ],
+    selector: '[target]',
+    standalone: false
 })
 class TargetDirective implements AsyncValidator {
   public async validate(

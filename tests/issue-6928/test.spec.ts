@@ -24,13 +24,15 @@ describe('issue-6928', () => {
   @Component({
     selector: 'app-shared1',
     template: '',
-  })
+    standalone: false
+})
   class Shared1Component {}
 
   @Component({
     selector: 'app-shared2',
     template: '',
-  })
+    standalone: false
+})
   class Shared2Component {}
 
   @NgModule({
@@ -43,20 +45,20 @@ describe('issue-6928', () => {
   @Component({
     selector: 'app-standalone',
     template: '<app-shared1></app-shared1>',
-    ['standalone' as never /* TODO: remove after upgrade to a14 */]:
-      true,
+    ['standalone' as never /* TODO: remove after upgrade to a14 */]: true,
     ['imports' as never /* TODO: remove after upgrade to a14 */]: [
-      CommonModule,
-      SharedModule,
+        CommonModule,
+        SharedModule,
     ],
-  })
+    standalone: false
+})
   class StandaloneComponent {}
 
   @Component({
     selector: 'app-my-component',
-    template:
-      '<app-shared2></app-shared2><app-standalone></app-standalone>',
-  })
+    template: '<app-shared2></app-shared2><app-standalone></app-standalone>',
+    standalone: false
+})
   class MyComponent {}
 
   @NgModule({

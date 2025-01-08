@@ -1,7 +1,8 @@
 import { AfterContentInit, Component, ContentChildren, Directive, Input, QueryList, TemplateRef } from '@angular/core';
 
 @Directive({
-  selector: '[type]',
+    selector: '[type]',
+    standalone: false
 })
 export class CustomTypeDirective {
   @Input() public type = '';
@@ -10,8 +11,8 @@ export class CustomTypeDirective {
 }
 
 @Component({
-  selector: 'custom-root',
-  template: `
+    selector: 'custom-root',
+    template: `
     <div *ngIf="template1" class="template">
       <ng-container *ngTemplateOutlet="template; context: { $implicit: context }"></ng-container>
     </div>
@@ -22,6 +23,7 @@ export class CustomTypeDirective {
       <ng-content></ng-content>
     </div>
   `,
+    standalone: false
 })
 export class CustomRootComponent implements AfterContentInit {
   public context = ['0'];

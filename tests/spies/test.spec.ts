@@ -17,8 +17,9 @@ class TargetService {
 }
 
 @Component({
-  selector: 'target-spies',
-  template: '<ng-content></ng-content>',
+    selector: 'target-spies',
+    template: '<ng-content></ng-content>',
+    standalone: false
 })
 class TargetComponent {
   public constructor(protected service: TargetService) {

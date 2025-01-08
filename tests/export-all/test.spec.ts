@@ -11,7 +11,8 @@ import { TestBed } from '@angular/core/testing';
 import { MockBuilder, MockRender, ngMocks } from 'ng-mocks';
 
 @Pipe({
-  name: 'target',
+    name: 'target',
+    standalone: false
 })
 class TargetPipe implements PipeTransform {
   protected readonly name = 'pipe';
@@ -21,10 +22,11 @@ class TargetPipe implements PipeTransform {
 }
 
 @Component({
-  selector: 'target-export-all',
-  template: `<ng-container *ngIf="!value">{{
+    selector: 'target-export-all',
+    template: `<ng-container *ngIf="!value">{{
     value | target
   }}</ng-container>`,
+    standalone: false
 })
 class TargetComponent {
   @Input() public readonly value: string | null = null;

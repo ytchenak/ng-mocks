@@ -3,19 +3,21 @@ import { Directive, NgModule } from '@angular/core';
 import { MockBuilder, MockRender } from 'ng-mocks';
 
 @Directive({
-  selector: 'child-173',
+    selector: 'child-173',
+    standalone: false
 })
 class ChildDirective {}
 
 @Directive({
-  // this def of an existing directive breaks ng-mocks.
-  providers: [
-    {
-      provide: ChildDirective,
-      useValue: undefined,
-    },
-  ],
-  selector: 'parent-173',
+    // this def of an existing directive breaks ng-mocks.
+    providers: [
+        {
+            provide: ChildDirective,
+            useValue: undefined,
+        },
+    ],
+    selector: 'parent-173',
+    standalone: false
 })
 class ParentDirective {}
 

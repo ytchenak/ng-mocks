@@ -4,8 +4,9 @@ import { TestBed } from '@angular/core/testing';
 import { MockBuilder, MockComponent } from 'ng-mocks';
 
 @Component({
-  selector: 'target-nested-before-each',
-  template: 'target',
+    selector: 'target-nested-before-each',
+    template: 'target',
+    standalone: false
 })
 class TargetComponent {}
 

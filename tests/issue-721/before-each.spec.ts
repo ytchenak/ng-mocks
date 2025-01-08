@@ -6,8 +6,9 @@ import { MockProvider, MockRender, ngMocks } from 'ng-mocks';
 const TOKEN = new InjectionToken('TOKEN');
 
 @Component({
-  selector: 'target-721-before-each',
-  template: '{{ value }}',
+    selector: 'target-721-before-each',
+    template: '{{ value }}',
+    standalone: false
 })
 class TargetComponent {
   public constructor(@Inject(TOKEN) public readonly value: number) {}

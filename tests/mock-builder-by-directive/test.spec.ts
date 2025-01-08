@@ -8,8 +8,9 @@ import {
 } from 'ng-mocks';
 
 @Component({
-  selector: 'internal-mock-builder-by-directive',
-  template: 'internal',
+    selector: 'internal-mock-builder-by-directive',
+    template: 'internal',
+    standalone: false
 })
 class InternalComponent {}
 

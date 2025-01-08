@@ -19,9 +19,10 @@ class TargetProvider extends TargetDirective {
 }
 
 @Component({
-  providers: [TargetProvider],
-  selector: 'target-double-decorator-1',
-  template: '{{ service.name }}',
+    providers: [TargetProvider],
+    selector: 'target-double-decorator-1',
+    template: '{{ service.name }}',
+    standalone: false
 })
 class TargetComponent {
   public constructor(public readonly service: TargetProvider) {}

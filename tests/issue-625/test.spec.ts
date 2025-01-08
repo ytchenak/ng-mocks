@@ -57,8 +57,9 @@ class SomeModule {
  * in v12.0.2 test fails with "Expected spy unknown to have been called but it was never called"
  */
 @Component({
-  selector: 'my-component',
-  template: '',
+    selector: 'my-component',
+    template: '',
+    standalone: false
 })
 class MyComponent implements OnInit {
   public constructor(private readonly someService: SomeService) {}

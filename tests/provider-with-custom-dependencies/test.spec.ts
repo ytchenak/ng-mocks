@@ -51,13 +51,14 @@ class TargetService {
 }
 
 @Component({
-  selector: 'target-provider-with-custom-dependencies',
-  template: `
+    selector: 'target-provider-with-custom-dependencies',
+    template: `
     "service:{{ service.service ? service.service.name : 'missed' }}"
     "optional:{{
       service.optional ? service.optional.name : 'missed'
     }}"
   `,
+    standalone: false
 })
 class TargetComponent {
   public constructor(public readonly service: TargetService) {}

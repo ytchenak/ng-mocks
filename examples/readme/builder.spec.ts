@@ -47,12 +47,13 @@ class StorageService {
 }
 
 @Component({
-  selector: 'profile',
-  template: `<form [formGroup]="form">
+    selector: 'profile',
+    template: `<form [formGroup]="form">
     <input type="text" name="email" formControlName="email" />
     <input type="text" name="firstName" formControlName="firstName" />
     <input type="text" name="lastName" formControlName="lastName" />
   </form>`,
+    standalone: false
 })
 class ProfileComponent implements OnInit {
   public readonly form = new FormGroup({

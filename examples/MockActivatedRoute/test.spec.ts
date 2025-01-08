@@ -4,8 +4,9 @@ import { ActivatedRoute, RouterModule } from '@angular/router';
 import { MockBuilder, MockInstance, MockRender } from 'ng-mocks';
 
 @Component({
-  selector: 'route',
-  template: '{{ param }}',
+    selector: 'route',
+    template: '{{ param }}',
+    standalone: false
 })
 class RouteComponent implements OnInit {
   public param: string | null = null;

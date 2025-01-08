@@ -3,8 +3,9 @@ import { Component, EventEmitter, Output } from '@angular/core';
 import { MockBuilder, MockRender, ngMocks } from 'ng-mocks';
 
 @Component({
-  selector: 'target-ng-mocks-output-317',
-  template: 'target',
+    selector: 'target-ng-mocks-output-317',
+    template: 'target',
+    standalone: false
 })
 class TargetComponent {
   @Output() public readonly update = new EventEmitter<void>();

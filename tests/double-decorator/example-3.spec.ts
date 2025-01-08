@@ -21,9 +21,10 @@ class BaseClass {
 }
 
 @Component({
-  providers: [BaseClass],
-  selector: 'target-double-decorator-3',
-  template: '{{ service.name }}',
+    providers: [BaseClass],
+    selector: 'target-double-decorator-3',
+    template: '{{ service.name }}',
+    standalone: false
 })
 class MyComponent {
   public constructor(public readonly service: BaseClass) {}

@@ -13,8 +13,9 @@ const MY_TOKEN_SINGLE = new InjectionToken('MY_TOKEN_SINGLE');
 const MY_TOKEN_MULTI = new InjectionToken('MY_TOKEN_MULTI');
 
 @Component({
-  selector: 'internal-module-with-tokens',
-  template: '{{ tokenSingle | json }} {{ tokenMulti | json }}',
+    selector: 'internal-module-with-tokens',
+    template: '{{ tokenSingle | json }} {{ tokenMulti | json }}',
+    standalone: false
 })
 class TargetComponent {
   public constructor(

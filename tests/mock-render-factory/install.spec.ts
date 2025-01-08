@@ -3,8 +3,9 @@ import { Component, Input, NgModule } from '@angular/core';
 import { MockBuilder, MockRenderFactory, ngMocks } from 'ng-mocks';
 
 @Component({
-  selector: 'target-mock-render-factory-install',
-  template: '{{ value }}',
+    selector: 'target-mock-render-factory-install',
+    template: '{{ value }}',
+    standalone: false
 })
 class TargetComponent {
   @Input() public readonly value: number | null = null;

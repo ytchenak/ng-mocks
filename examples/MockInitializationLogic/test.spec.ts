@@ -27,8 +27,9 @@ class CurrentUserService {
 }
 
 @Component({
-  selector: 'target',
-  template: '{{ name }}',
+    selector: 'target',
+    template: '{{ name }}',
+    standalone: false
 })
 class TargetComponent {
   // A property which will be used somewhere else: in a template or wherever.

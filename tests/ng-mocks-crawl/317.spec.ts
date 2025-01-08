@@ -3,10 +3,11 @@ import { Component, EventEmitter, Output } from '@angular/core';
 import { MockBuilder, MockRender, ngMocks } from 'ng-mocks';
 
 @Component({
-  selector: 'target-ng-mocks-crawl-317',
-  template: `<a (click)="update.emit()" data-role="link">
+    selector: 'target-ng-mocks-crawl-317',
+    template: `<a (click)="update.emit()" data-role="link">
     <span>test</span>
   </a>`,
+    standalone: false
 })
 class TargetComponent {
   @Output() public readonly update = new EventEmitter<void>();

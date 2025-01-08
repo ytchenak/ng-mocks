@@ -9,8 +9,8 @@ import {
 } from 'ng-mocks';
 
 @Component({
-  selector: 'target-538',
-  template: `
+    selector: 'target-538',
+    template: `
     <div
       [innerHTML]="
         domSanitizer.bypassSecurityTrustHtml(
@@ -19,6 +19,7 @@ import {
       "
     ></div>
   `,
+    standalone: false
 })
 class TargetComponent {
   public constructor(public readonly domSanitizer: DomSanitizer) {}

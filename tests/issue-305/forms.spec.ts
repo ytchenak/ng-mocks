@@ -9,10 +9,11 @@ import {
 } from 'ng-mocks';
 
 @Component({
-  selector: 'target-305-forms',
-  template: `
+    selector: 'target-305-forms',
+    template: `
     <input data-testid="inputControl" [(ngModel)]="value" />
   `,
+    standalone: false
 })
 class TargetComponent {
   public value: number | null = null;

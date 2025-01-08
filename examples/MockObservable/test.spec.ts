@@ -21,8 +21,9 @@ class TargetService {
 }
 
 @Component({
-  selector: 'target',
-  template: '{{ list | json }}',
+    selector: 'target',
+    template: '{{ list | json }}',
+    standalone: false
 })
 class TargetComponent {
   public list: number[] = [];

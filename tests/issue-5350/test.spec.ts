@@ -33,7 +33,8 @@ describe('issue-5350', () => {
   @Component({
     selector: 'target',
     template: '{{ input1 }}{{ input2 }}',
-  })
+    standalone: false
+})
   class TargetComponent extends TargetBase {
     @Input({
       alias: 'aInput1',

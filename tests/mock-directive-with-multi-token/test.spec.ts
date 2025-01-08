@@ -5,14 +5,15 @@ import { MockBuilder, MockRender } from 'ng-mocks';
 const TOKEN = new InjectionToken('TOKEN');
 
 @Directive({
-  providers: [
-    {
-      multi: true,
-      provide: TOKEN,
-      useValue: true,
-    },
-  ],
-  selector: 'target-mock-directive-with-multi-token',
+    providers: [
+        {
+            multi: true,
+            provide: TOKEN,
+            useValue: true,
+        },
+    ],
+    selector: 'target-mock-directive-with-multi-token',
+    standalone: false
 })
 class TargetDirective {}
 

@@ -32,8 +32,9 @@ class DependencyModule {
 }
 
 @Component({
-  selector: 'target-197',
-  template: '{{ service.echo() }}',
+    selector: 'target-197',
+    template: '{{ service.echo() }}',
+    standalone: false
 })
 class TargetComponent {
   public constructor(public readonly service: DependencyService) {}

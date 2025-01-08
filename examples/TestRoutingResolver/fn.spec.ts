@@ -50,8 +50,9 @@ const sideEffectResolver: ResolveFn<
 // A dummy component.
 // It will be replaced with a mock copy.
 @Component({
-  selector: 'route',
-  template: 'route',
+    selector: 'route',
+    template: 'route',
+    standalone: false
 })
 class RouteComponent {
   public routeTestRoutingFnResolver() {}

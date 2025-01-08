@@ -5,21 +5,22 @@ import { MockBuilder, MockRender, ngMocks } from 'ng-mocks';
 const TOKEN = new InjectionToken<string>('TOKEN');
 
 @Component({
-  providers: [
-    {
-      provide: TOKEN,
-      useValue: 'parent',
-    },
-  ],
-  selector: 'parent-2097-nested',
-  template:
-    '<child-2097-nested></child-2097-nested><child-2097-nested></child-2097-nested><ng-content></ng-content>',
+    providers: [
+        {
+            provide: TOKEN,
+            useValue: 'parent',
+        },
+    ],
+    selector: 'parent-2097-nested',
+    template: '<child-2097-nested></child-2097-nested><child-2097-nested></child-2097-nested><ng-content></ng-content>',
+    standalone: false
 })
 class ParentComponent {}
 
 @Component({
-  selector: 'child-2097-nested',
-  template: 'child',
+    selector: 'child-2097-nested',
+    template: 'child',
+    standalone: false
 })
 class ChildComponent {}
 

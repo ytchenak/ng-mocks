@@ -3,8 +3,9 @@ import { Component, Input, NgModule } from '@angular/core';
 import { MockBuilder, MockRender, ngMocks } from 'ng-mocks';
 
 @Component({
-  selector: 'target-2105',
-  template: ' {{ value }} ',
+    selector: 'target-2105',
+    template: ' {{ value }} ',
+    standalone: false
 })
 class TargetComponent {
   @Input() public readonly value: string | null = null;

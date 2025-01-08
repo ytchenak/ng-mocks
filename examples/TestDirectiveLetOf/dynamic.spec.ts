@@ -8,7 +8,8 @@ import {
 import { MockBuilder, MockRender, ngMocks } from 'ng-mocks';
 
 @Directive({
-  selector: '[dxTemplate]',
+    selector: '[dxTemplate]',
+    standalone: false
 })
 class DxTemplateDirective {
   @Input() public readonly dxTemplateOf: string | null = null;

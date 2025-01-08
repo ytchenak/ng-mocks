@@ -15,8 +15,9 @@ class ItemService {
 }
 
 @Component({
-  selector: 'app-item-container',
-  template: 'ItemContainerComponent',
+    selector: 'app-item-container',
+    template: 'ItemContainerComponent',
+    standalone: false
 })
 class ItemContainerComponent implements OnInit {
   items$?: Observable<Item[]>;
@@ -28,8 +29,9 @@ class ItemContainerComponent implements OnInit {
 }
 
 @Component({
-  selector: 'app-cake-item-container',
-  template: 'CakeItemContainerComponent',
+    selector: 'app-cake-item-container',
+    template: 'CakeItemContainerComponent',
+    standalone: false
 })
 class CakeItemContainerComponent
   extends ItemContainerComponent

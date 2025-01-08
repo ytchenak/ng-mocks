@@ -9,24 +9,27 @@ class TargetService {
 }
 
 @Component({
-  selector: 'target-726',
-  template: '{{ service.name }}',
+    selector: 'target-726',
+    template: '{{ service.name }}',
+    standalone: false
 })
 class TargetComponent {
   public constructor(public readonly service: TargetService) {}
 }
 
 @Component({
-  selector: 'view',
-  template: '<ng-content></ng-content>',
-  viewProviders: [TargetService],
+    selector: 'view',
+    template: '<ng-content></ng-content>',
+    viewProviders: [TargetService],
+    standalone: false
 })
 class ViewComponent {}
 
 @Component({
-  providers: [TargetService],
-  selector: 'provider',
-  template: '<ng-content></ng-content>',
+    providers: [TargetService],
+    selector: 'provider',
+    template: '<ng-content></ng-content>',
+    standalone: false
 })
 class ProviderComponent {}
 

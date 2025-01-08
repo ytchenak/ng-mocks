@@ -3,8 +3,9 @@ import { Component, NgModule } from '@angular/core';
 import { MockBuilder, MockRender, ngMocks } from 'ng-mocks';
 
 @Component({
-  selector: 'target-857',
-  template: 'target',
+    selector: 'target-857',
+    template: 'target',
+    standalone: false
 })
 class Target857Component {}
 

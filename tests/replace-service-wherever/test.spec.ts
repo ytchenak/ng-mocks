@@ -28,8 +28,9 @@ class ReplacementService {
 }
 
 @Component({
-  selector: 'target-replace-server-wherever',
-  template: "{{ service.name }} {{ service.called ? 'called' : '' }}",
+    selector: 'target-replace-server-wherever',
+    template: "{{ service.name }} {{ service.called ? 'called' : '' }}",
+    standalone: false
 })
 class TargetComponent {
   public constructor(public readonly service: TargetService) {}

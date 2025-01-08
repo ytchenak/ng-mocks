@@ -5,7 +5,8 @@ import { MockBuilder, MockRender, ngMocks } from 'ng-mocks';
 // A simple pipe that accepts an array of strings, sorts them,
 // and returns a joined string of the values.
 @Pipe({
-  name: 'target',
+    name: 'target',
+    standalone: false
 })
 class TargetPipe implements PipeTransform {
   public transform(value: string[], asc = true): string {

@@ -7,8 +7,9 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { MockBuilder, MockRender, ngMocks } from 'ng-mocks';
 
 @Component({
-  selector: 'target-735',
-  template: '{{ service }}',
+    selector: 'target-735',
+    template: '{{ service }}',
+    standalone: false
 })
 class TargetComponent {
   public constructor(public readonly service: DomSanitizer) {}

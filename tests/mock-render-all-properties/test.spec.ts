@@ -56,8 +56,8 @@ class ParentClass {
 }
 
 @Component({
-  selector: 'target-mock-render-all-properties',
-  template: `
+    selector: 'target-mock-render-all-properties',
+    template: `
     'pubChildProp:{{ pubChildProp }}' 'pubChildPropGet:{{
       pubChildPropGet
     }}' 'pubReadonlyChildProp:{{ pubReadonlyChildProp }}'
@@ -67,6 +67,7 @@ class ParentClass {
     }}' 'pubParentParentProp:{{ pubReadonlyParentProp }}'
     'pubParentParentPropGet:{{ pubReadonlyParentPropGet }}'
   `,
+    standalone: false
 })
 class TargetComponent extends ParentClass {
   public pubChildProp = true;

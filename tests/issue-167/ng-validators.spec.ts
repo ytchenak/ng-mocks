@@ -16,14 +16,15 @@ import {
 import { MockBuilder, MockRender, ngMocks } from 'ng-mocks';
 
 @Directive({
-  providers: [
-    {
-      multi: true,
-      provide: NG_VALIDATORS,
-      useExisting: forwardRef(() => TargetDirective),
-    },
-  ],
-  selector: '[target]',
+    providers: [
+        {
+            multi: true,
+            provide: NG_VALIDATORS,
+            useExisting: forwardRef(() => TargetDirective),
+        },
+    ],
+    selector: '[target]',
+    standalone: false
 })
 class TargetDirective implements Validator {
   public pubRegisterOnValidatorChange: any;
@@ -43,8 +44,9 @@ class TargetDirective implements Validator {
 }
 
 @Component({
-  selector: 'app-root-167-ng-validators',
-  template: '<input [formControl]="control" target>',
+    selector: 'app-root-167-ng-validators',
+    template: '<input [formControl]="control" target>',
+    standalone: false
 })
 class RealComponent {
   public readonly control = new FormControl();

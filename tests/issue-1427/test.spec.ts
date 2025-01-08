@@ -3,8 +3,9 @@ import { Component, HostBinding, HostListener } from '@angular/core';
 import { MockBuilder, MockRender, ngMocks } from 'ng-mocks';
 
 @Component({
-  selector: 'target-1427',
-  template: '{{ id }}',
+    selector: 'target-1427',
+    template: '{{ id }}',
+    standalone: false
 })
 class TargetComponent {
   @HostBinding() public id = 'custom-form';

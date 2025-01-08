@@ -13,8 +13,9 @@ class TargetService {
 }
 
 @Component({
-  selector: 'target-performance',
-  template: '{{ service.count }}',
+    selector: 'target-performance',
+    template: '{{ service.count }}',
+    standalone: false
 })
 class TargetComponent {
   public constructor(public readonly service: TargetService) {}

@@ -12,8 +12,9 @@ import {
 import { MockBuilder, MockRender, ngMocks } from 'ng-mocks';
 
 @Component({
-  selector: 'child',
-  template: 'dependency',
+    selector: 'child',
+    template: 'dependency',
+    standalone: false
 })
 class ChildComponent {
   @ContentChild('something', {} as never)
@@ -31,13 +32,14 @@ class ChildComponent {
 class ChildModule {}
 
 @Component({
-  selector: 'target',
-  template: `
+    selector: 'target',
+    template: `
     <child
       [someInput]="value1"
       (someOutput)="trigger.emit($event)"
     ></child>
   `,
+    standalone: false
 })
 class TargetComponent {
   @Output() public readonly trigger = new EventEmitter();

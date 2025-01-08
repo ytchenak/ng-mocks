@@ -3,8 +3,9 @@ import { Component, ContentChild, TemplateRef } from '@angular/core';
 import { MockBuilder, MockRender, ngMocks } from 'ng-mocks';
 
 @Component({
-  selector: 'target-ng-mocks-find-template-of-317',
-  template: 'target',
+    selector: 'target-ng-mocks-find-template-of-317',
+    template: 'target',
+    standalone: false
 })
 class TargetComponent {
   @ContentChild('tpl', {} as never)

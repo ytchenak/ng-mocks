@@ -11,7 +11,8 @@ import {
 import { MockBuilder, MockRender, ngMocks } from 'ng-mocks';
 
 @Directive({
-  selector: '[tpl]',
+    selector: '[tpl]',
+    standalone: false
 })
 class TplDirective {
   @Input('tpl') public readonly name: string | null = null;
@@ -20,31 +21,34 @@ class TplDirective {
 }
 
 @Directive({
-  providers: [
-    {
-      provide: TplDirective,
-      useExisting: MockDirective,
-    },
-  ],
-  selector: '[mock]',
+    providers: [
+        {
+            provide: TplDirective,
+            useExisting: MockDirective,
+        },
+    ],
+    selector: '[mock]',
+    standalone: false
 })
 class MockDirective {
   public constructor(public readonly tpl: TemplateRef<any>) {}
 }
 
 @Component({
-  selector: 'target-ng-mocks-render-debug-node',
-  template: `<mock-ng-mocks-render-debug-node
+    selector: 'target-ng-mocks-render-debug-node',
+    template: `<mock-ng-mocks-render-debug-node
     ><ng-template mock
       >rendered-mock</ng-template
     ></mock-ng-mocks-render-debug-node
   >`,
+    standalone: false
 })
 class TargetComponent {}
 
 @Component({
-  selector: 'mock-ng-mocks-render-debug-node',
-  template: '',
+    selector: 'mock-ng-mocks-render-debug-node',
+    template: '',
+    standalone: false
 })
 class MockComponent {
   @ContentChild(TplDirective, {} as never)

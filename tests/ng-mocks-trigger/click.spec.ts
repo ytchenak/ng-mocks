@@ -21,8 +21,9 @@ try {
 }
 
 @Component({
-  selector: 'target-ng-mocks-trigger-click',
-  template: ' <div (click)="clickTag = $event" #element></div> ',
+    selector: 'target-ng-mocks-trigger-click',
+    template: ' <div (click)="clickTag = $event" #element></div> ',
+    standalone: false
 })
 class TargetComponent implements OnDestroy {
   public clickFromEvent: any;

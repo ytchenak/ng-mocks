@@ -15,7 +15,8 @@ import {
 } from 'ng-mocks';
 
 @Pipe({
-  name: 'target',
+    name: 'target',
+    standalone: false
 })
 class TargetPipe implements PipeTransform {
   protected name = 'pipe:';
@@ -26,13 +27,15 @@ class TargetPipe implements PipeTransform {
 }
 
 @Component({
-  selector: 'target-is-mocked-ng-def-of',
-  template: 'target',
+    selector: 'target-is-mocked-ng-def-of',
+    template: 'target',
+    standalone: false
 })
 class TargetComponent {}
 
 @Directive({
-  selector: 'target-is-mocked-ng-def-of',
+    selector: 'target-is-mocked-ng-def-of',
+    standalone: false
 })
 class TargetDirective {}
 

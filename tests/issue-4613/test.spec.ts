@@ -7,8 +7,9 @@ import { MockBuilder } from 'ng-mocks';
 class TargetService {}
 
 @Component({
-  selector: 'target-4613',
-  template: '{{ service.constructor.name }}',
+    selector: 'target-4613',
+    template: '{{ service.constructor.name }}',
+    standalone: false
 })
 class TargetComponent {
   constructor(public readonly service: TargetService) {}

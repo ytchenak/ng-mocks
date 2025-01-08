@@ -3,7 +3,8 @@ import { Directive } from '@angular/core';
 import funcParseInputsAndRequiresAttributes from './func.parse-inputs-and-requires-attributes';
 
 @Directive({
-  selector: 'target',
+    selector: 'target',
+    standalone: false
 })
 class TargetDirective {}
 

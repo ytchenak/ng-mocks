@@ -10,24 +10,27 @@ import {
 } from 'ng-mocks';
 
 @Component({
-  selector: 'target-ng-mocks-global-wipe',
-  template: '{{ name }}',
+    selector: 'target-ng-mocks-global-wipe',
+    template: '{{ name }}',
+    standalone: false
 })
 class TargetComponent {
   public readonly name: string = 'target';
 }
 
 @Component({
-  selector: 'target-ng-mocks-global-wipe',
-  template: '{{ name }}',
+    selector: 'target-ng-mocks-global-wipe',
+    template: '{{ name }}',
+    standalone: false
 })
 class FakeComponent {
   public readonly name: string = 'fake';
 }
 
 @Component({
-  selector: 'target-ng-mocks-global-wipe',
-  template: '{{ name }}',
+    selector: 'target-ng-mocks-global-wipe',
+    template: '{{ name }}',
+    standalone: false
 })
 class ShadowComponent {
   public readonly name: string = 'shadow';

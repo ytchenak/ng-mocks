@@ -11,8 +11,9 @@ class TargetService {
 }
 
 @Component({
-  selector: 'target-488',
-  template: '',
+    selector: 'target-488',
+    template: '',
+    standalone: false
 })
 class TargetComponent {
   public constructor(private readonly service: TargetService) {

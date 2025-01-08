@@ -13,7 +13,8 @@ import {
 import { isMockOf, MockBuilder, MockRender, ngMocks } from 'ng-mocks';
 
 @Directive({
-  selector: '[tpl1]',
+    selector: '[tpl1]',
+    standalone: false
 })
 class Mock1Directive {
   @Input('tpl1') public readonly name: string | null = null;
@@ -22,7 +23,8 @@ class Mock1Directive {
 }
 
 @Directive({
-  selector: '[tpl2]',
+    selector: '[tpl2]',
+    standalone: false
 })
 class Mock2Directive {
   @Input('tpl2') public readonly name: string | null = null;
@@ -31,7 +33,8 @@ class Mock2Directive {
 }
 
 @Directive({
-  selector: '[tpl3]',
+    selector: '[tpl3]',
+    standalone: false
 })
 class Mock3Directive {
   @Input('tpl3') public readonly name: string | null = null;
@@ -41,8 +44,8 @@ class Mock3Directive {
 }
 
 @Component({
-  selector: 'mock-ng-mocks-render-component',
-  template: `
+    selector: 'mock-ng-mocks-render-component',
+    template: `
     <div data-role="header" *ngIf="header">
       <ng-container *ngTemplateOutlet="header"></ng-container>
     </div>
@@ -75,6 +78,7 @@ class Mock3Directive {
       </ng-container>
     </div>
   `,
+    standalone: false
 })
 class MockComponent {
   @ContentChildren(Mock2Directive, {} as never)
@@ -93,8 +97,8 @@ class MockComponent {
 }
 
 @Component({
-  selector: 'target-ng-mocks-render-component',
-  template: `
+    selector: 'target-ng-mocks-render-component',
+    template: `
     <mock-ng-mocks-render-component>
       :step:1:
       <ng-template #header>rendered-header</ng-template>
@@ -121,6 +125,7 @@ class MockComponent {
       :step:9:
     </mock-ng-mocks-render-component>
   `,
+    standalone: false
 })
 class TargetComponent {}
 

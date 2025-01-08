@@ -3,14 +3,15 @@ import { Component, Directive, EventEmitter, InjectionToken, Input, NgModule, Ou
 const TARGET = new InjectionToken('TARGET');
 
 @Component({
-  providers: [
-    {
-      provide: TARGET,
-      useValue: 'test',
-    },
-  ],
-  selector: 'target-get-inputs-and-outputs',
-  template: '<a (click)="output.emit()">{{ input }}</a>',
+    providers: [
+        {
+            provide: TARGET,
+            useValue: 'test',
+        },
+    ],
+    selector: 'target-get-inputs-and-outputs',
+    template: '<a (click)="output.emit()">{{ input }}</a>',
+    standalone: false
 })
 export class TargetComponent {
   @Input('input1') public input = '';
@@ -18,13 +19,14 @@ export class TargetComponent {
 }
 
 @Directive({
-  providers: [
-    {
-      provide: TARGET,
-      useValue: 'test',
-    },
-  ],
-  selector: 'target-get-inputs-and-outputs',
+    providers: [
+        {
+            provide: TARGET,
+            useValue: 'test',
+        },
+    ],
+    selector: 'target-get-inputs-and-outputs',
+    standalone: false
 })
 export class Target2Directive {
   @Input('input2') public input = '';
@@ -33,13 +35,14 @@ export class Target2Directive {
 }
 
 @Directive({
-  providers: [
-    {
-      provide: TARGET,
-      useValue: 'test',
-    },
-  ],
-  selector: 'target-get-inputs-and-outputs',
+    providers: [
+        {
+            provide: TARGET,
+            useValue: 'test',
+        },
+    ],
+    selector: 'target-get-inputs-and-outputs',
+    standalone: false
 })
 export class Target3Directive {
   @Input('input3') public input = '';

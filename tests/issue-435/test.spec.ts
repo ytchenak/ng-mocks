@@ -4,8 +4,9 @@ import { Component, NgModule } from '@angular/core';
 import { MockBuilder, MockRender, ngMocks } from 'ng-mocks';
 
 @Component({
-  selector: 'target-435',
-  template: '{{ stamp | date }}',
+    selector: 'target-435',
+    template: '{{ stamp | date }}',
+    standalone: false
 })
 class TargetComponent {
   public readonly stamp = '2021-05-01';

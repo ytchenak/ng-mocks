@@ -23,7 +23,8 @@ class PrefixService {
 }
 
 @Pipe({
-  name: 'target',
+    name: 'target',
+    standalone: false
 })
 class TargetPipe implements PipeTransform {
   protected prefix: string;
@@ -38,8 +39,9 @@ class TargetPipe implements PipeTransform {
 }
 
 @Component({
-  selector: 'target-218',
-  template: '{{ value | target }} - {{ piped }}',
+    selector: 'target-218',
+    template: '{{ value | target }} - {{ piped }}',
+    standalone: false
 })
 class TargetComponent implements OnInit {
   public piped = '';

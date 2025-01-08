@@ -28,8 +28,9 @@ class Service {
 }
 
 @Component({
-  selector: 'target-providedin-root',
-  template: ':{{ service.value }}:{{ token }}:{{localeId}}:',
+    selector: 'target-providedin-root',
+    template: ':{{ service.value }}:{{ token }}:{{localeId}}:',
+    standalone: false
 })
 class TargetComponent {
   public constructor(

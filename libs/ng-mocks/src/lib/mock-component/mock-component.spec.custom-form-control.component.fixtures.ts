@@ -2,18 +2,19 @@ import { Component, forwardRef, Input } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 @Component({
-  providers: [
-    {
-      multi: true,
-      provide: NG_VALUE_ACCESSOR,
-      useExisting: forwardRef(() => CustomFormControlComponent),
-    },
-  ],
-  selector: 'custom-form-control',
-  template: `
+    providers: [
+        {
+            multi: true,
+            provide: NG_VALUE_ACCESSOR,
+            useExisting: forwardRef(() => CustomFormControlComponent),
+        },
+    ],
+    selector: 'custom-form-control',
+    template: `
     <span>{{ value }}</span>
     <button (click)="this.onChange('changed')">Change value</button>
   `,
+    standalone: false
 })
 export class CustomFormControlComponent implements ControlValueAccessor {
   @Input() public disabled = false;

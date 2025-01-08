@@ -8,8 +8,9 @@ import { MockBuilder, MockRender } from 'ng-mocks';
 // The module is kept in one module,
 // and is replaced with a mock copy in another one.
 @Component({
-  selector: 'shared',
-  template: 'shared',
+    selector: 'shared',
+    template: 'shared',
+    standalone: false
 })
 class SharedComponent {}
 
@@ -32,8 +33,9 @@ class MockModule {}
 class KeepModule {}
 
 @Component({
-  selector: 'target-222-mock-keep-priorities',
-  template: 'target',
+    selector: 'target-222-mock-keep-priorities',
+    template: 'target',
+    standalone: false
 })
 class TargetComponent {}
 

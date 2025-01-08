@@ -11,19 +11,21 @@ import {
 import { isMockOf, MockBuilder, MockRender, ngMocks } from 'ng-mocks';
 
 @Directive({
-  selector: '[appCell]',
+    selector: '[appCell]',
+    standalone: false
 })
 class CellDirective {
   public constructor(public el?: TemplateRef<any>) {}
 }
 
 @Component({
-  selector: 'app-table-288',
-  template: ` <div *ngFor="let item of data">
+    selector: 'app-table-288',
+    template: ` <div *ngFor="let item of data">
     <ng-container
       *ngTemplateOutlet="cell.el; context: { $implicit: item }"
     ></ng-container>
   </div>`,
+    standalone: false
 })
 class TableComponent {
   @ContentChild(CellDirective, {} as never)
@@ -32,12 +34,13 @@ class TableComponent {
 }
 
 @Component({
-  selector: 'app-root-288',
-  template: ` <app-table-288 [data]="data">
+    selector: 'app-root-288',
+    template: ` <app-table-288 [data]="data">
     <ng-template appCell let-item>
       <div class="custom-data-element">Data: {{ item.data }}</div>
     </ng-template>
   </app-table-288>`,
+    standalone: false
 })
 class AppComponent {
   public data = [{ data: 1 }, { data: 2 }];

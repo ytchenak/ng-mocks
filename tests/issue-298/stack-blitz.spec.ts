@@ -5,19 +5,21 @@ import { By } from '@angular/platform-browser';
 import { MockDirective, ngMocks } from 'ng-mocks';
 
 @Directive({
-  selector: '[myDirective]',
+    selector: '[myDirective]',
+    standalone: false
 })
 class MyDirective {
   @Input() public value?: string;
 }
 
 @Component({
-  selector: 'app',
-  template: `
+    selector: 'app',
+    template: `
     <div class="p1"><span myDirective value="d1"></span></div>
     <div class="p2"><span myDirective value="d2"></span></div>
     <div class="p3"><span myDirective value="d3"></span></div>
   `,
+    standalone: false
 })
 class AppComponent {}
 

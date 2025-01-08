@@ -23,30 +23,25 @@ import {
 } from 'ng-mocks';
 
 @Component({
-  animations: [
-    trigger('openClose', [
-      state(
-        'open',
-        style({
-          opacity: 0,
-        }),
-      ),
-      state(
-        'closed',
-        style({
-          opacity: 1,
-        }),
-      ),
-      transition('open => closed', []),
-      transition('closed => open', []),
-    ]),
-  ],
-  selector: 'target-1377',
-  template: `
+    animations: [
+        trigger('openClose', [
+            state('open', style({
+                opacity: 0,
+            })),
+            state('closed', style({
+                opacity: 1,
+            })),
+            transition('open => closed', []),
+            transition('closed => open', []),
+        ]),
+    ],
+    selector: 'target-1377',
+    template: `
     <div [@openClose]="isOpen ? 'open' : 'closed'">
       The box is now {{ isOpen ? 'Open' : 'Closed' }}!
     </div>
   `,
+    standalone: false
 })
 class TargetComponent {
   public isOpen = true;

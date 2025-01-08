@@ -19,14 +19,16 @@ import {
 import { MockBuilder, MockRender } from 'ng-mocks';
 
 @Component({
-  selector: 'actual-empty',
-  template: '',
+    selector: 'actual-empty',
+    template: '',
+    standalone: false
 })
 class ActualEmptyComponent {}
 
 @Component({
-  selector: 'actual-injection',
-  template: '',
+    selector: 'actual-injection',
+    template: '',
+    standalone: false
 })
 class ActualInjectionComponent implements ControlValueAccessor {
   protected value: any;
@@ -54,15 +56,16 @@ class ActualInjectionComponent implements ControlValueAccessor {
 }
 
 @Component({
-  providers: [
-    {
-      multi: true,
-      provide: NG_VALUE_ACCESSOR,
-      useExisting: forwardRef(() => ActualTokenComponent),
-    },
-  ],
-  selector: 'actual-token',
-  template: '',
+    providers: [
+        {
+            multi: true,
+            provide: NG_VALUE_ACCESSOR,
+            useExisting: forwardRef(() => ActualTokenComponent),
+        },
+    ],
+    selector: 'actual-token',
+    template: '',
+    standalone: false
 })
 class ActualTokenComponent implements ControlValueAccessor {
   protected value: any;
@@ -84,14 +87,15 @@ class ActualTokenComponent implements ControlValueAccessor {
 }
 
 @Directive({
-  providers: [
-    {
-      multi: true,
-      provide: NG_VALUE_ACCESSOR,
-      useExisting: forwardRef(() => ActualTokenDirective),
-    },
-  ],
-  selector: '[actualToken]',
+    providers: [
+        {
+            multi: true,
+            provide: NG_VALUE_ACCESSOR,
+            useExisting: forwardRef(() => ActualTokenDirective),
+        },
+    ],
+    selector: '[actualToken]',
+    standalone: false
 })
 class ActualTokenDirective implements ControlValueAccessor {
   protected value: any;

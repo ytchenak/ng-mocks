@@ -21,15 +21,16 @@ import {
 } from 'ng-mocks';
 
 @Component({
-  providers: [
-    {
-      multi: true,
-      provide: NG_VALUE_ACCESSOR,
-      useExisting: forwardRef(() => TargetComponent),
-    },
-  ],
-  selector: 'target-246',
-  template: '{{ providedValue }}',
+    providers: [
+        {
+            multi: true,
+            provide: NG_VALUE_ACCESSOR,
+            useExisting: forwardRef(() => TargetComponent),
+        },
+    ],
+    selector: 'target-246',
+    template: '{{ providedValue }}',
+    standalone: false
 })
 class TargetComponent implements ControlValueAccessor {
   public providedChange: any;
@@ -55,14 +56,15 @@ class TargetComponent implements ControlValueAccessor {
 }
 
 @Directive({
-  providers: [
-    {
-      multi: true,
-      provide: NG_VALIDATORS,
-      useExisting: forwardRef(() => TargetDirective),
-    },
-  ],
-  selector: '[target]',
+    providers: [
+        {
+            multi: true,
+            provide: NG_VALIDATORS,
+            useExisting: forwardRef(() => TargetDirective),
+        },
+    ],
+    selector: '[target]',
+    standalone: false
 })
 class TargetDirective implements Validator {
   public provideChange: any;
@@ -82,14 +84,15 @@ class TargetDirective implements Validator {
 }
 
 @Directive({
-  providers: [
-    {
-      multi: true,
-      provide: NG_ASYNC_VALIDATORS,
-      useExisting: forwardRef(() => TargetAsyncDirective),
-    },
-  ],
-  selector: '[targetAsync]',
+    providers: [
+        {
+            multi: true,
+            provide: NG_ASYNC_VALIDATORS,
+            useExisting: forwardRef(() => TargetAsyncDirective),
+        },
+    ],
+    selector: '[targetAsync]',
+    standalone: false
 })
 class TargetAsyncDirective implements Validator {
   public provideChange: any;

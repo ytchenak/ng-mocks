@@ -4,16 +4,18 @@ import { TestBed } from '@angular/core/testing';
 import { MockModule, MockRender, ngMocks } from 'ng-mocks';
 
 @Component({
-  selector: 'target1-ng-mocks-global-keep',
-  template: '{{ name }}',
+    selector: 'target1-ng-mocks-global-keep',
+    template: '{{ name }}',
+    standalone: false
 })
 class Target1Component {
   public readonly name = 'target1';
 }
 
 @Component({
-  selector: 'target2-ng-mocks-global-keep',
-  template: '{{ name }}',
+    selector: 'target2-ng-mocks-global-keep',
+    template: '{{ name }}',
+    standalone: false
 })
 class Target2Component {
   public readonly name = 'target2';

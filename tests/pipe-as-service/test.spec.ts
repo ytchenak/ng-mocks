@@ -16,7 +16,8 @@ import {
 } from 'ng-mocks';
 
 @Pipe({
-  name: 'target',
+    name: 'target',
+    standalone: false
 })
 @Injectable()
 class TargetPipe implements PipeTransform {
@@ -32,12 +33,13 @@ class TargetPipe implements PipeTransform {
 }
 
 @Component({
-  selector: 'target-pipe-as-service',
-  template: `
+    selector: 'target-pipe-as-service',
+    template: `
     'pipe:{{ '123' | target }}' 's:transform:{{
       service.transform('123')
     }}' 's:name:{{ service.name }}' 's:echo:{{ service.echo() }}'
   `,
+    standalone: false
 })
 class TargetComponent {
   public constructor(public readonly service: TargetPipe) {}

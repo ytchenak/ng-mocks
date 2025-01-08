@@ -62,8 +62,9 @@ class MockGuard implements CanActivate {
 // A simple component pretending a login form.
 // It will be replaced with a mock copy.
 @Component({
-  selector: 'login',
-  template: 'login',
+    selector: 'login',
+    template: 'login',
+    standalone: false
 })
 class LoginComponent {
   public loginTestRoutingGuard() {}
@@ -72,8 +73,9 @@ class LoginComponent {
 // A simple component pretending a protected dashboard.
 // It will be replaced with a mock copy.
 @Component({
-  selector: 'dashboard',
-  template: 'dashboard',
+    selector: 'dashboard',
+    template: 'dashboard',
+    standalone: false
 })
 class DashboardComponent {
   public dashboardTestRoutingGuard() {}

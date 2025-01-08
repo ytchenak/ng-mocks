@@ -6,8 +6,9 @@ import { BehaviorSubject } from 'rxjs';
 import { ngMocks } from 'ng-mocks';
 
 @Pipe({
-  name: 'nothing',
-  pure: false,
+    name: 'nothing',
+    pure: false,
+    standalone: false
 })
 class NothingPipe implements PipeTransform {
   transform<T>(value: T): T {
@@ -16,8 +17,8 @@ class NothingPipe implements PipeTransform {
 }
 
 @Component({
-  selector: 'target-2314',
-  template: `
+    selector: 'target-2314',
+    template: `
     <div
       class="array"
       *ngFor="
@@ -42,6 +43,7 @@ class NothingPipe implements PipeTransform {
       true
     </div>
   `,
+    standalone: false
 })
 class TargetComponent {
   public array$ = new BehaviorSubject([1]);

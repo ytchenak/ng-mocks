@@ -7,8 +7,9 @@ import { MockService } from '../mock-service/mock-service';
 import { isMockControlValueAccessor } from './func.is-mock-control-value-accessor';
 
 @Component({
-  selector: 'target',
-  template: '',
+    selector: 'target',
+    template: '',
+    standalone: false
 })
 class TargetComponent {
   public writeValue(obj: any) {
@@ -17,7 +18,8 @@ class TargetComponent {
 }
 
 @Directive({
-  selector: '[target]',
+    selector: '[target]',
+    standalone: false
 })
 class TargetDirective {
   public writeValue(obj: any) {

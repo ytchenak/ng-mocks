@@ -19,7 +19,8 @@ describe('issue-5047', () => {
   @Component({
     selector: 'dependency',
     template: '<ng-content></ng-content>',
-  })
+    standalone: false
+})
   class DependencyComponent {
     @Input() public readonly name: string | null = null;
   }
@@ -28,7 +29,8 @@ describe('issue-5047', () => {
   @Component({
     selector: 'target-5047',
     template: `<dependency *ngIf="name != null">target</dependency>`,
-  })
+    standalone: false
+})
   class TargetComponent {
     @Input() public readonly name: string | null = null;
   }
